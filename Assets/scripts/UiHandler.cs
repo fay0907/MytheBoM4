@@ -11,4 +11,8 @@ public class UiHandler : MonoBehaviour
     {
         Instantiate(towers[0]);
     }
+    public void Tower2()
+    {
+        Instantiate(towers[1]);
+    }
 }
