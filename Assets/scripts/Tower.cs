@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerDragAndDrop : MonoBehaviour
@@ -7,50 +5,42 @@ public class TowerDragAndDrop : MonoBehaviour
     bool canMove = true;
     Vector2 pillerPosistion;
 
-    private string isCollidingWith;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision tag : " + collision.tag);
+        Debug.Log("test");
         if (collision.tag == "Tower")
         {
-            isCollidingWith = "Tower";
             pillerPosistion = collision.transform.position;
-            Debug.Log(pillerPosistion);
         }
         else
         {
-            isCollidingWith = "None";
+            pillerPosistion = new Vector2 (0, 0);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        /*
+        
         if (collision.tag == "Tower")
         {
-            Debug.Log(pillerPosistion);
             pillerPosistion = new Vector2();
-        }*/
+        }
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(isCollidingWith);
             if (pillerPosistion == new Vector2())
             {
-                // Destroy(gameObject);
-                Debug.Log("if");
+                Destroy(gameObject);
             }
             else
             {
                 transform.position = pillerPosistion;
-                Debug.Log("else");
+                canMove = false;
             }
         }
-        Debug.Log(pillerPosistion);
         
 
         if (canMove)
