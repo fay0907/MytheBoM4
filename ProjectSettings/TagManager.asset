@@ -7,6 +7,7 @@ TagManager:
   - meow
   - Boat
   - Enemy
+  - floor
   layers:
   - Default
   - TransparentFX
