@@ -15,4 +15,23 @@ public class UiHandler : MonoBehaviour
     {
         Instantiate(towers[1]);
     }
+
+    public void Tower3()
+    {
+        Instantiate(towers[2]);
+    }
+
+    public void Tower4()
+    {
+        Instantiate(towers[3]);
+    }
+
+    public void Tower5()
+    {
+        Instantiate(towers[4]); 
+    }
+        public void Tower6()
+    {
+        Instantiate(towers[5]); 
+    }
 }
