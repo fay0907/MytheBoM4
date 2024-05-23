@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class emn : MonoBehaviour
 {
-    internal int hp = 5; // Assuming 5 is the initial HP of the enemy
+    public int hp = 5; // Assuming 5 is the initial HP of the enemy
     internal int speed = 2;
     
     public static int alive = 0;
