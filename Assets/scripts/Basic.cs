@@ -88,11 +88,13 @@ public class Basic : MonoBehaviour
 
     public void Kill()
     {
+        
         Debug.Log("kill");
         if (onLava == true)
         {
             Debug.Log("ik hoor dood te zijn");
             Destroy(gameObject);
+          //  Destroy(gameObject.Find("enemy(Clone)"));
         }
     }
 
