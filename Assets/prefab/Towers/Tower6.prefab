@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5145407333793271988}
   - component: {fileID: 1376773736323544839}
   - component: {fileID: 4002956828208734195}
-  - component: {fileID: 2092569755680677746}
+  - component: {fileID: -3383070482778827969}
   m_Layer: 0
   m_Name: Tower6
   m_TagString: Untagged
@@ -126,8 +126,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &2092569755680677746
-BoxCollider2D:
+--- !u!58 &-3383070482778827969
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -159,15 +159,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.51, y: 3.78}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 2
