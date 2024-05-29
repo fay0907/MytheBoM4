@@ -74,11 +74,8 @@ public class TowerAttack : MonoBehaviour
             return;
         }
 
-        // Implement your attack logic here
-        // Example:
         Debug.Log("Attacking: " + currentEnemy.name);
 
-        // Check if the enemy is dead (replace this with your actual check)
         bool enemyIsDead = currentEnemy.isDead(); // Assuming isDead() is a method in your emn class
 
         if (enemyIsDead)
