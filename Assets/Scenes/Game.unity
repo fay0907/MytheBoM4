@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 281963288}
   - component: {fileID: 281963292}
   - component: {fileID: 281963289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GridTile4
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -195,8 +195,8 @@ Transform:
   m_GameObject: {fileID: 281963286}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.061, y: -2.005, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 3.08, y: -2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1360674413}
@@ -241,7 +241,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 499988445}
   - component: {fileID: 499988444}
   - component: {fileID: 499988443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GridTile6
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -1011,7 +1011,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: tower 4
+  m_text: Herakles
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1038,8 +1038,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1278,7 +1278,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: tower 2
+  m_text: Jason
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1305,8 +1305,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1500,7 +1500,7 @@ GameObject:
   - component: {fileID: 895944866}
   - component: {fileID: 895944868}
   - component: {fileID: 895944867}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GridTile3
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -1516,8 +1516,8 @@ Transform:
   m_GameObject: {fileID: 895944864}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.068, y: -2.006, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 1.068, y: -2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1360674413}
@@ -1562,7 +1562,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -1770,9 +1770,9 @@ GameObject:
   m_Component:
   - component: {fileID: 942709311}
   - component: {fileID: 942709310}
-  - component: {fileID: 942709313}
   - component: {fileID: 942709312}
-  m_Layer: 0
+  - component: {fileID: 942709313}
+  m_Layer: 6
   m_Name: GridTile
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -1819,7 +1819,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -1915,7 +1915,7 @@ GameObject:
   - component: {fileID: 966229077}
   - component: {fileID: 966229076}
   - component: {fileID: 966229075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GridTile5
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -2034,7 +2034,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -2103,7 +2103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: tower 1
+  m_text: Argus
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2130,8 +2130,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2505,7 +2505,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: tower 3
+  m_text: Atlanta
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2532,8 +2532,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2764,7 +2764,7 @@ GameObject:
   - component: {fileID: 1393895597}
   - component: {fileID: 1393895599}
   - component: {fileID: 1393895598}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GridTile2
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -2780,8 +2780,8 @@ Transform:
   m_GameObject: {fileID: 1393895595}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.06, y: -0.015, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 3.02, y: 0.02, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1360674413}
@@ -2826,7 +2826,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0

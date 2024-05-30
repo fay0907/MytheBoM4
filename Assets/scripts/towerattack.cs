@@ -10,7 +10,7 @@ public class TowerAttack : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger detected with: " + other.gameObject.name); // Added debug log
+      //  Debug.Log("Trigger detected with: " + other.gameObject.name); // Added debug log
 
         // Check if the collided object has the tag "trowe"
         if (other.gameObject.CompareTag("enemy"))
@@ -19,7 +19,7 @@ public class TowerAttack : MonoBehaviour
             if (Enemy != null && !enemiesInRange.Contains(Enemy))
             {
                 enemiesInRange.Add(Enemy);
-                Debug.Log("Enemy entered range: " + Enemy.name);
+              //  Debug.Log("Enemy entered range: " + Enemy.name);
 
                 if (!isAttacking)
                 {
@@ -31,15 +31,15 @@ public class TowerAttack : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Trigger exit detected with: " + other.gameObject.name); // Added debug log
+      //  Debug.Log("Trigger exit detected with: " + other.gameObject.name); // Added debug log
 
-        if (other.gameObject.CompareTag("trowe"))
+        if (other.gameObject.CompareTag("Tower"))
         {
             enemy Enemy = other.GetComponent<enemy>();
             if (Enemy != null && enemiesInRange.Contains(Enemy))
             {
                 enemiesInRange.Remove(Enemy);
-                Debug.Log("Enemy exited range: " + Enemy.name);
+             //   Debug.Log("Enemy exited range: " + Enemy.name);
 
                 if (currentEnemy == Enemy)
                 {
@@ -62,7 +62,7 @@ public class TowerAttack : MonoBehaviour
             currentEnemy = enemiesInRange[0];
             isAttacking = true;
             InvokeRepeating("Attack", atkspd, atkspd); // Repeats the method at specified attack speed
-            Debug.Log("Started attacking: " + currentEnemy.name);
+          //  Debug.Log("Started attacking: " + currentEnemy.name);
         }
     }
 
@@ -76,7 +76,7 @@ public class TowerAttack : MonoBehaviour
 
         // Implement your attack logic here
         // Example:
-        Debug.Log("Attacking: " + currentEnemy.name);
+      //  Debug.Log("Attacking: " + currentEnemy.name);
 
         // Check if the enemy is dead (replace this with your actual check)
         bool enemyIsDead = currentEnemy.isDead(); // Assuming isDead() is a method in your emn class
@@ -85,12 +85,12 @@ public class TowerAttack : MonoBehaviour
         {
             enemiesInRange.Remove(currentEnemy);
             currentEnemy = null;
-            Debug.Log("Enemy killed.");
+          //  Debug.Log("Enemy killed.");
 
             if (enemiesInRange.Count > 0)
             {
                 currentEnemy = enemiesInRange[0];
-                Debug.Log("Switching to new enemy: " + currentEnemy.name);
+             //   Debug.Log("Switching to new enemy: " + currentEnemy.name);
             }
             else
             {
@@ -103,6 +103,6 @@ public class TowerAttack : MonoBehaviour
     {
         isAttacking = false;
         CancelInvoke("Attack");
-        Debug.Log("Stopped attacking.");
+     //   Debug.Log("Stopped attacking.");
     }
 }
