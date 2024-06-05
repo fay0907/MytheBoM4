@@ -4,7 +4,7 @@ using UnityEngine;
 public class TowerDragAndDrop : MonoBehaviour
 {
     bool canMove = true;
-    bool debugFollow = true;
+   
     Collider2D collider;
     BoxCollider2D boxCollider;
     CircleCollider2D circleCollider;
