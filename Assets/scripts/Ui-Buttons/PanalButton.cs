@@ -3,11 +3,12 @@ using UnityEngine;
 public class CharacterClickHandler : MonoBehaviour
 {
     private TowerDragAndDrop towerDragAndDrop;
-     private GameObject menuPanel;
+    private GameObject menuPanel;
 
 
     void Start()
     {
+        
         menuPanel = GameObject.FindGameObjectWithTag("TowerUI");
         towerDragAndDrop = GetComponent<TowerDragAndDrop>();
 
