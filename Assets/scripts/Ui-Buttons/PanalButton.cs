@@ -5,7 +5,7 @@ public class CharacterClickHandler : MonoBehaviour
     private TowerDragAndDrop towerDragAndDrop;
     private GameObject menuPanel;
 
-
+    public GameObject panel;
     void Start()
     {
         
