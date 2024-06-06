@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TowerDragAndDrop : MonoBehaviour
 {
-    bool canMove = true;
+    public bool canMove = true;
    
     Collider2D collider;
     BoxCollider2D boxCollider;
@@ -24,11 +24,10 @@ public class TowerDragAndDrop : MonoBehaviour
         {
             return;
         }
-        Debug.Log("OnTriggerStay2D " + DateTime.Now + collision);
-        Debug.Log("OnTriggerStay2D " + DateTime.Now + collision.tag + " "+ collision.name);
+
         if (collision.tag == "Tower")
         {
-            Debug.Log("OnTriggerStay2D " + DateTime.Now + collision + " is tower");
+
             collider = collision;
         }
         else
@@ -43,8 +42,7 @@ public class TowerDragAndDrop : MonoBehaviour
         {
             return;
         }
-       Debug.Log("OnTriggerExit2D " + DateTime.Now + collision);
-         Debug.Log("OnTriggerExit2D " + DateTime.Now + collision.tag + " " + collision.name);
+       
         collider = null;
     }
 
@@ -64,7 +62,7 @@ public class TowerDragAndDrop : MonoBehaviour
         if (Input.GetMouseButtonDown(0) )//&& canMove)
         {
             if (collider == null) { Debug.Log("collider = null");  return; };
-            Debug.Log(DateTime.Now + " LeftButtonCheck " + name);
+            
 
             TowerPlacement tower = collider.GetComponent<TowerPlacement>();
 
@@ -83,7 +81,7 @@ public class TowerDragAndDrop : MonoBehaviour
             }
             else
             {
-                Debug.Log("hastower = true");
+                
             }
         }
     }

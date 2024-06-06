@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4068280103242072719}
   - component: {fileID: 7288029195494416149}
   - component: {fileID: 2126038852020293847}
-  - component: {fileID: 2163284503690941801}
   - component: {fileID: -4868422033828684784}
+  - component: {fileID: 4041628419979824129}
+  - component: {fileID: 2163284503690941801}
   - component: {fileID: -7109221238132653560}
   - component: {fileID: 6326829371141108252}
   m_Layer: 0
@@ -101,6 +102,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6d9b32f45a34649a73f31e0db24210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
+--- !u!114 &-4868422033828684784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830905640817616132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f241927c75a390f41b8cbc9f6e9c61ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkspd: 1
+--- !u!114 &4041628419979824129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830905640817616132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa103b7317b8e154d8e89a1d9aae7819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &2163284503690941801
 Rigidbody2D:
   serializedVersion: 4
@@ -128,19 +155,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-4868422033828684784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830905640817616132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f241927c75a390f41b8cbc9f6e9c61ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atkspd: 1
 --- !u!61 &-7109221238132653560
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -177,7 +191,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.88666666, y: 1.7066667}
+    oldSize: {x: 2.66, y: 5.12}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
