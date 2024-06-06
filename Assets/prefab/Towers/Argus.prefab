@@ -36,7 +36,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 846454856060315441}
+  - {fileID: 2141818159867138235}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4650832614192119578
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa103b7317b8e154d8e89a1d9aae7819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 3097398952243784269, guid: 443eb5023c588ff43a1c538b21bc8efc, type: 3}
+  text: hello world
 --- !u!50 &7793677481049183094
 Rigidbody2D:
   serializedVersion: 4
@@ -237,7 +237,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.958
---- !u!1001 &6165442350719526660
+--- !u!1001 &4870220058023219342
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -279,6 +279,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6786708112371367989, guid: 443eb5023c588ff43a1c538b21bc8efc, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786708112371367989, guid: 443eb5023c588ff43a1c538b21bc8efc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786708112371367989, guid: 443eb5023c588ff43a1c538b21bc8efc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786708112371367989, guid: 443eb5023c588ff43a1c538b21bc8efc, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6786708112371367989, guid: 443eb5023c588ff43a1c538b21bc8efc, type: 3}
@@ -334,8 +346,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443eb5023c588ff43a1c538b21bc8efc, type: 3}
---- !u!224 &846454856060315441 stripped
+--- !u!224 &2141818159867138235 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6786708112371367989, guid: 443eb5023c588ff43a1c538b21bc8efc, type: 3}
-  m_PrefabInstance: {fileID: 6165442350719526660}
+  m_PrefabInstance: {fileID: 4870220058023219342}
   m_PrefabAsset: {fileID: 0}
