@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4068280103242072719}
   - component: {fileID: 7288029195494416149}
   - component: {fileID: 2126038852020293847}
-  - component: {fileID: -4868422033828684784}
   - component: {fileID: 4041628419979824129}
   - component: {fileID: 2163284503690941801}
   - component: {fileID: -7109221238132653560}
@@ -104,19 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
---- !u!114 &-4868422033828684784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830905640817616132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f241927c75a390f41b8cbc9f6e9c61ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atkspd: 1
 --- !u!114 &4041628419979824129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa103b7317b8e154d8e89a1d9aae7819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
+  text: 
 --- !u!50 &2163284503690941801
 Rigidbody2D:
   serializedVersion: 4
@@ -248,6 +234,10 @@ PrefabInstance:
     - target: {fileID: 3097398952243784269, guid: 443eb5023c588ff43a1c538b21bc8efc, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097398952243784269, guid: 443eb5023c588ff43a1c538b21bc8efc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6786708112371367989, guid: 443eb5023c588ff43a1c538b21bc8efc, type: 3}
       propertyPath: m_Pivot.x
