@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c821a90aafa8154d929bbf3b598e25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkspd: 1
+  atkspd: 10
 --- !u!114 &434459486143333247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.51, y: 3.78}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!58 &-8301880564638076704
 CircleCollider2D:
@@ -209,7 +209,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7239362959749987700}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
