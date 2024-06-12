@@ -57,7 +57,7 @@ public class Floor : MonoBehaviour
         if (state == 0)
         {
             SetTransformX(transform.position.y+10f);
-            help.test2();
+            
             // transform.position = Lavafloor.transform.position;
             state = 1;
             attackspeed = 1.5f;

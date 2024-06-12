@@ -21,7 +21,7 @@ public class healthManager : MonoBehaviour
         //Debug.Log(Health / 200);
         if (Health <= 0)
         {
-            SceneManager.LoadSceneAsync(2);
+            SceneManager.LoadSceneAsync(6);
         }
     }
 
