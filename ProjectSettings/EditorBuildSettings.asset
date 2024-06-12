@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lore.unity
     guid: bbc75bc7b410de24bae36d2f89ecd44d
+  - enabled: 1
+    path: Assets/Scenes/PlaatselijkOverleden.unity
+    guid: 1a8bd9d786d01af48a4791e513f1c747
   m_configObjects: {}
