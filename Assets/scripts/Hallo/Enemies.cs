@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    [SerializeField] Basic enemy;
+    [SerializeField] enemy enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class Enemies : MonoBehaviour
     {
         if (Random.value <= 0.01f)
         {
-            Basic meneertje = Instantiate(enemy);
+            enemy meneertje = Instantiate(enemy);
 
         }
     }
