@@ -12,6 +12,7 @@ TagManager:
   - Boat
   - Enemy
   - LavaEnemy
+  - TowerUI
   layers:
   - Default
   - TransparentFX

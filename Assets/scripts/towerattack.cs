@@ -5,21 +5,26 @@ public class TowerAttack : MonoBehaviour
 {
     private List<enemy> enemiesInRange = new List<enemy>();
     private enemy currentEnemy;
+    private Money money;
     private bool isAttacking;
-    public float atkspd; // attack speed
+    public float atkspd = 1; // attack speed
+    internal int damage = 2;
+    internal int hpbeforeattack;
+
+    void Start()
+    {
+        // Initialize Money instance
+        money = new Money();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-      //  Debug.Log("Trigger detected with: " + other.gameObject.name); // Added debug log
-
-        // Check if the collided object has the tag "trowe"
         if (other.gameObject.CompareTag("enemy"))
         {
             enemy Enemy = other.GetComponent<enemy>();
             if (Enemy != null && !enemiesInRange.Contains(Enemy))
             {
                 enemiesInRange.Add(Enemy);
-              //  Debug.Log("Enemy entered range: " + Enemy.name);
 
                 if (!isAttacking)
                 {
@@ -31,15 +36,12 @@ public class TowerAttack : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-      //  Debug.Log("Trigger exit detected with: " + other.gameObject.name); // Added debug log
-
         if (other.gameObject.CompareTag("Tower"))
         {
             enemy Enemy = other.GetComponent<enemy>();
             if (Enemy != null && enemiesInRange.Contains(Enemy))
             {
                 enemiesInRange.Remove(Enemy);
-             //   Debug.Log("Enemy exited range: " + Enemy.name);
 
                 if (currentEnemy == Enemy)
                 {
@@ -60,9 +62,9 @@ public class TowerAttack : MonoBehaviour
         if (enemiesInRange.Count > 0)
         {
             currentEnemy = enemiesInRange[0];
+            hpbeforeattack = currentEnemy.hp; // Initialize hpbeforeattack when starting to attack
             isAttacking = true;
             InvokeRepeating("Attack", atkspd, atkspd); // Repeats the method at specified attack speed
-          //  Debug.Log("Started attacking: " + currentEnemy.name);
         }
     }
 
@@ -74,26 +76,26 @@ public class TowerAttack : MonoBehaviour
             return;
         }
 
-// HEAD
-        // Implement your attack logic here
-        // Example:
-      //  Debug.Log("Attacking: " + currentEnemy.name);
-//
         Debug.Log("Attacking: " + currentEnemy.name);
-// 000a49ba5f19ad45d099ab1ffd77d8eb2ee47d36
 
-        bool enemyIsDead = currentEnemy.isDead(); // Assuming isDead() is a method in your emn class
+        int damageDealt = damage; // Define the damage to be dealt
+
+        currentEnemy.hp -= damageDealt; // Deal damage
+        money.moneyvalue += (hpbeforeattack - currentEnemy.hp); // Update moneyvalue based on HP difference
+
+        hpbeforeattack = currentEnemy.hp; // Update hpbeforeattack after attack
+
+        bool enemyIsDead = currentEnemy.isDead(); // Check if the enemy is dead
 
         if (enemyIsDead)
         {
             enemiesInRange.Remove(currentEnemy);
             currentEnemy = null;
-          //  Debug.Log("Enemy killed.");
 
             if (enemiesInRange.Count > 0)
             {
                 currentEnemy = enemiesInRange[0];
-             //   Debug.Log("Switching to new enemy: " + currentEnemy.name);
+                hpbeforeattack = currentEnemy.hp; // Initialize hpbeforeattack for the new enemy
             }
             else
             {
@@ -106,6 +108,5 @@ public class TowerAttack : MonoBehaviour
     {
         isAttacking = false;
         CancelInvoke("Attack");
-     //   Debug.Log("Stopped attacking.");
     }
 }
