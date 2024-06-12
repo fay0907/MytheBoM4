@@ -7,14 +7,17 @@ public class TowerAttack : MonoBehaviour
     private enemy currentEnemy;
     private Money money;
     private bool isAttacking;
-    public float atkspd = 1; // attack speed
+    public float atkspd = 1; 
     internal int damage = 2;
     internal int hpbeforeattack;
 
     void Start()
     {
-        // Initialize Money instance
-        money = new Money();
+        money = FindObjectOfType<Money>();
+        if (money == null )
+        {
+            Debug.Log("object not found");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -25,6 +28,7 @@ public class TowerAttack : MonoBehaviour
             if (Enemy != null && !enemiesInRange.Contains(Enemy))
             {
                 enemiesInRange.Add(Enemy);
+                Debug.Log("Enemy added");
 
                 if (!isAttacking)
                 {
@@ -42,7 +46,7 @@ public class TowerAttack : MonoBehaviour
             if (Enemy != null && enemiesInRange.Contains(Enemy))
             {
                 enemiesInRange.Remove(Enemy);
-
+                
                 if (currentEnemy == Enemy)
                 {
                     currentEnemy = null;
@@ -61,10 +65,10 @@ public class TowerAttack : MonoBehaviour
     {
         if (enemiesInRange.Count > 0)
         {
-            currentEnemy = enemiesInRange[0];
-            hpbeforeattack = currentEnemy.hp; // Initialize hpbeforeattack when starting to attack
-            isAttacking = true;
-            InvokeRepeating("Attack", atkspd, atkspd); // Repeats the method at specified attack speed
+                currentEnemy = enemiesInRange[0];
+                hpbeforeattack = currentEnemy.hp; // Initialize hpbeforeattack when starting to attack
+                isAttacking = true;
+                InvokeRepeating("Attack", atkspd, atkspd); // Repeats the method at specified attack speed
         }
     }
 
@@ -81,8 +85,12 @@ public class TowerAttack : MonoBehaviour
         int damageDealt = damage; // Define the damage to be dealt
 
         currentEnemy.hp -= damageDealt; // Deal damage
+        if (currentEnemy.hp < 0)
+        {
+            currentEnemy.hp = 0;
+        }
         money.moneyvalue += (hpbeforeattack - currentEnemy.hp); // Update moneyvalue based on HP difference
-
+        Debug.Log("money = " + money.moneyvalue);
         hpbeforeattack = currentEnemy.hp; // Update hpbeforeattack after attack
 
         bool enemyIsDead = currentEnemy.isDead(); // Check if the enemy is dead

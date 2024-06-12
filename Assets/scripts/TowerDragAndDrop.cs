@@ -4,15 +4,25 @@ using UnityEngine;
 public class TowerDragAndDrop : MonoBehaviour
 {
     public bool canMove = true;
-   
-    Collider2D collider;
-    BoxCollider2D boxCollider;
-    CircleCollider2D circleCollider;
+    internal bool canAttack = false;
+    private Collider2D collider;
+    private BoxCollider2D boxCollider;
+    private CircleCollider2D circleCollider;
 
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         circleCollider = GetComponent<CircleCollider2D>();
+
+        if (circleCollider == null)
+        {
+            Debug.LogError("CircleCollider2D not found on the GameObject.");
+        }
+
+        if (boxCollider == null)
+        {
+            Debug.LogError("BoxCollider2D not found on the GameObject.");
+        }
 
         circleCollider.enabled = false;
         boxCollider.enabled = true;
@@ -20,14 +30,13 @@ public class TowerDragAndDrop : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(canMove==false || collision is CircleCollider2D)//placed don't run placementcode
+        if (canMove == false || collision is CircleCollider2D) //placed don't run placement code
         {
             return;
         }
 
-        if (collision.tag == "Tower")
+        if (collision.CompareTag("Tower"))
         {
-
             collider = collision;
         }
         else
@@ -38,11 +47,11 @@ public class TowerDragAndDrop : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (canMove == false)//placed don't run placementcode
+        if (canMove == false) //placed don't run placement code
         {
             return;
         }
-       
+
         collider = null;
     }
 
@@ -59,29 +68,53 @@ public class TowerDragAndDrop : MonoBehaviour
 
     private void LeftButtonCheck()
     {
-        if (Input.GetMouseButtonDown(0) )//&& canMove)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (collider == null) { Debug.Log("collider = null");  return; };
-            
+            if (collider == null)
+            {
+                Debug.Log("collider = null");
+                return;
+            }
 
             TowerPlacement tower = collider.GetComponent<TowerPlacement>();
 
-            if (tower == null) { Debug.Log("object does not have the script TowerPlacement!"); return; };
+            if (tower == null)
+            {
+                Debug.Log("object does not have the script TowerPlacement!");
+                return;
+            }
 
             if (!tower.HasTower())
             {
                 transform.position = collider.gameObject.transform.position;
                 tower.SetTowerPlaced();
                 canMove = false;
-                circleCollider.enabled = true;
-                boxCollider.enabled = false;
-                enabled = false;
+
+                if (circleCollider != null)
+                {
+                    circleCollider.enabled = true;
+                    Debug.Log("CircleCollider2D enabled.");
+                }
+                else
+                {
+                    Debug.LogError("circleCollider is null.");
+                }
+
+                if (boxCollider != null)
+                {
+                    boxCollider.enabled = false;
+                    Debug.Log("BoxCollider2D disabled.");
+                }
+                else
+                {
+                    Debug.LogError("boxCollider is null.");
+                }
+
                 collider = null;
+                canAttack = true;
+
+                // Disable the script only after enabling the collider
                 this.enabled = false;
-            }
-            else
-            {
-                
             }
         }
     }
