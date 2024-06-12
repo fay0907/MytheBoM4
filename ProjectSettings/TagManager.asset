@@ -8,6 +8,10 @@ TagManager:
   - Tower
   - Circle
   - enemy
+  - floor
+  - Boat
+  - Enemy
+  - LavaEnemy
   layers:
   - Default
   - TransparentFX
