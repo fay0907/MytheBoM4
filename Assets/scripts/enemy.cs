@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     
     Vector3 differenceVector;
@@ -13,8 +13,9 @@ public class enemy : MonoBehaviour
     Vector3 velocity;
     Rigidbody2D rb;
     private healthManager chiuaua;
-    public int hp = 1;
+    public int hp = 5;
     public bool onLava = false;
+    int maxAllowedDistance = 2;
 
     // Vector3 velocity;
     // float speed = 2f;
@@ -38,24 +39,19 @@ public class enemy : MonoBehaviour
     void Update()
     {
         differenceVector = GameObject.FindWithTag("Boat").transform.position - transform.position;
-        //distance = differenceVector.magnitude;
         Direction = differenceVector.normalized;
-        velocity = Direction * speed * Time.deltaTime;
+        velocity = Direction * Mathf.Clamp(speed * Time.deltaTime, 0f, maxAllowedDistance);
         transform.position += velocity;
 
         
         
     }
-    public void removeEnemyHealth(int damage)
-    {
-        hp -= damage;
-
-    }
     internal bool isDead()
     {
-        if (hp < 0)
+        if (hp <= 0)
         {
             Destroy(gameObject);
+            Debug.Log("attempted to destroy gameobject");
             return true;
         }
         return false;
@@ -65,44 +61,9 @@ public class enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Boat")
         {
-            // Debug.Log("ik word betast");
             chiuaua.removeHealth(10);
             Destroy(gameObject);
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "floor")
-        {
-            //  Debug.Log("ik raak aan");
-            
-            onLava = true;
-            transform.gameObject.tag = ("LavaEnemy");
-        }
-        
-    }
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "floor")
-        {
-           // Debug.Log("ik raak niet meer aan");
-            onLava = false;
-            transform.gameObject.tag = ("Enemy");
-        }
-    }
-
-    public void Kill()
-    {
-        
-        Debug.Log("kill");
-      //  if (onLava == true)
-       // {
-            Debug.Log("ik hoor dood te zijn");
-            Destroy(GameObject.FindWithTag("LavaEnemy"));
-          //  Destroy(gameObject.Find("enemy(Clone)"));
-      //  }
-    }
-
 
 }

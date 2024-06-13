@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class TowerAttack : MonoBehaviour
 {
-    private List<enemy> enemiesInRange = new List<enemy>();
-    private enemy currentEnemy;
+    private List<Enemy> enemiesInRange = new List<Enemy>();
+    private Enemy currentEnemy;
     private Money money;
     private bool isAttacking;
-    public float atkspd = 1; 
+    public float atkspd = 0.5f; // attackspeed in seconds  
     internal int damage = 2;
     internal int hpbeforeattack;
 
     void Start()
     { 
         money = FindObjectOfType<Money>();
-        if (money == null )
+        if (money == null)
         {
             Debug.Log("object not found");
         }
@@ -24,7 +24,7 @@ public class TowerAttack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("enemy"))
         {
-            enemy Enemy = other.GetComponent<enemy>();
+            Enemy Enemy = other.GetComponent<Enemy>();
             if (Enemy != null && !enemiesInRange.Contains(Enemy))
             {
                 enemiesInRange.Add(Enemy);
@@ -42,7 +42,7 @@ public class TowerAttack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Tower"))
         {
-            enemy Enemy = other.GetComponent<enemy>();
+            Enemy Enemy = other.GetComponent<Enemy>();
             if (Enemy != null && enemiesInRange.Contains(Enemy))
             {
                 enemiesInRange.Remove(Enemy);
@@ -85,13 +85,17 @@ public class TowerAttack : MonoBehaviour
         int damageDealt = damage; // Define the damage to be dealt
 
         currentEnemy.hp -= damageDealt; // Deal damage
+        Debug.Log(damageDealt + "damage dealt");
         if (currentEnemy.hp < 0)
         {
             currentEnemy.hp = 0;
         }
+
+
         money.moneyvalue += (hpbeforeattack - currentEnemy.hp); // Update moneyvalue based on HP difference
         Debug.Log("money = " + money.moneyvalue);
         hpbeforeattack = currentEnemy.hp; // Update hpbeforeattack after attack
+
 
         bool enemyIsDead = currentEnemy.isDead(); // Check if the enemy is dead
 
