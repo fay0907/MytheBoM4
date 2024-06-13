@@ -12,7 +12,7 @@ public class TowerAttack : MonoBehaviour
     internal int hpbeforeattack;
 
     void Start()
-    {
+    { 
         money = FindObjectOfType<Money>();
         if (money == null )
         {
