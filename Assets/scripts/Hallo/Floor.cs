@@ -8,13 +8,13 @@ public class Floor : MonoBehaviour
   //  SpriteRenderer m_SpriteRenderer;
   //  m_SpriteRenderer = GetComponent<SpriteRenderer>();
     private healthManager help;
-    private enemy boterhamworst;
+    private Enemy boterhamworst;
     float attackspeed = 50f;
     public int state = 0;
     // Start is called before the first frame update
     void Start()
     {
-        boterhamworst = FindObjectOfType<enemy>();
+        boterhamworst = FindObjectOfType<Enemy>();
         help = FindObjectOfType<healthManager>();
     }
     void SetTransformX(float n)
@@ -37,7 +37,7 @@ public class Floor : MonoBehaviour
             //Debug.Log("piss");
             //Debug.Log("holy shit hij werkt");
             timePassed = 0f;
-            boterhamworst.Kill();
+            boterhamworst.isDead();
         }
 
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Money : MonoBehaviour
 {
-    internal int moneyvalue = 0;
+    public int moneyvalue = 0;
     public TextMeshProUGUI moneytext;
     internal int moneydifference = 0;
 

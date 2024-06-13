@@ -1,23 +1,40 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    [SerializeField] enemy enemy;
-    // Start is called before the first frame update
+    public GameObject enemyPrefab;
+    bool working = false;
+
     void Start()
     {
-        
+        // No initialization needed in Start if using Coroutine for spawning
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Random.value <= 0.01f)
+        if (!working)
         {
-            enemy meneertje = Instantiate(enemy);
-
+            StartCoroutine(enemyspawner());
         }
+    }
+
+    IEnumerator enemyspawner()
+    {
+        working = true;
+
+        // Instantiate the enemy prefab
+        GameObject newEnemyObject = Instantiate(enemyPrefab);
+        if (newEnemyObject == null)
+        {
+            Debug.LogError("Failed to instantiate enemy prefab");
+            working = false;
+            yield break;
+        }
+        // Access the Enemy component attached to the instantiated GameObject
+        Enemy newEnemy = newEnemyObject.GetComponent<Enemy>();
+        
+            yield return new WaitForSeconds(3);
+            working = false;
     }
 }
