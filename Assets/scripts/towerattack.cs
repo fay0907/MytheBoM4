@@ -22,7 +22,7 @@ public class TowerAttack : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             Enemy Enemy = other.GetComponent<Enemy>();
             if (Enemy != null && !enemiesInRange.Contains(Enemy))
@@ -40,7 +40,7 @@ public class TowerAttack : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Tower"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             Enemy Enemy = other.GetComponent<Enemy>();
             if (Enemy != null && enemiesInRange.Contains(Enemy))

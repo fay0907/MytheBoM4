@@ -40,11 +40,8 @@ public class Enemy : MonoBehaviour
     {
         differenceVector = GameObject.FindWithTag("Boat").transform.position - transform.position;
         Direction = differenceVector.normalized;
-        velocity = Direction * Mathf.Clamp(speed * Time.deltaTime, 0f, maxAllowedDistance);
+        velocity = Direction * speed * Time.deltaTime;  // Remove Mathf.Clamp if not necessary
         transform.position += velocity;
-
-        
-        
     }
     internal bool isDead()
     {
