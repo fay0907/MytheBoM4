@@ -8,13 +8,22 @@ public class TowerAttack : MonoBehaviour
     private bool isAttacking;
     [SerializeField] internal float atkspd = 0.5f; // Attack speed in seconds
     [SerializeField] internal int damage = 2;
-    internal bool removedEnemy = false;
-    internal int enemieskilled;
+    private float attackCooldown = 0f; // Cooldown timer
 
-    private void Start()
+    void Update()
     {
-
+        // Handle the cooldown timer
+        if (isAttacking)
+        {
+            attackCooldown -= Time.deltaTime;
+            if (attackCooldown <= 0f)
+            {
+                Attack();
+                attackCooldown = atkspd;
+            }
+        }
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
@@ -24,7 +33,6 @@ public class TowerAttack : MonoBehaviour
             if (enemy != null && !enemiesInRange.Contains(enemy))
             {
                 enemiesInRange.Add(enemy);
-
                 if (!isAttacking)
                 {
                     StartAttacking();
@@ -41,12 +49,11 @@ public class TowerAttack : MonoBehaviour
             if (enemy != null && enemiesInRange.Contains(enemy))
             {
                 enemiesInRange.Remove(enemy);
-
                 if (currentEnemy == enemy)
                 {
                     currentEnemy = null;
                     isAttacking = false;
-                    StopAttacking();
+                    StartAttacking();
                 }
             }
         }
@@ -58,26 +65,23 @@ public class TowerAttack : MonoBehaviour
         {
             currentEnemy = enemiesInRange[0];
             isAttacking = true;
+            attackCooldown = atkspd; // Start the cooldown
         }
     }
-            /*InvokeRepeating("Attack", 0f , atkspd); // Repeats the method at specified attack speed
-        }
-    }*/
 
     void Attack()
     {
         if (currentEnemy == null)
         {
-            StopAttacking();
+            isAttacking = false;
             return;
         }
 
-        else if (currentEnemy.IsDead()) // Call the IsDead method to check if the enemy is dead
+        if (currentEnemy.IsDead())
         {
             enemiesInRange.Remove(currentEnemy);
             currentEnemy = null;
             Destroy(currentEnemy);
-            
 
             if (enemiesInRange.Count > 0)
             {
@@ -85,7 +89,7 @@ public class TowerAttack : MonoBehaviour
             }
             else
             {
-                StopAttacking();
+                isAttacking = false;
             }
         }
         else
@@ -96,14 +100,10 @@ public class TowerAttack : MonoBehaviour
             {
                 currentEnemy.hp = 0;
             }
-            Money.moneyvalue += hpdifference - currentEnemy.hp; //calculates difference between hp before and after attack
-            
+            Money.moneyvalue += hpdifference - currentEnemy.hp;
+            Debug.Log("damage dealt. added money: " + Money.moneyvalue);
+
             currentEnemy.TakeDamage();
         }
-    }
-    void StopAttacking()
-    {
-        isAttacking = false;
-        CancelInvoke("Attack");
     }
 }

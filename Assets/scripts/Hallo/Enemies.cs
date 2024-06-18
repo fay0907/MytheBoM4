@@ -39,7 +39,7 @@ public class Enemies : MonoBehaviour
             yield break;
         }
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2.9f);
         working = false;
     }
 }
