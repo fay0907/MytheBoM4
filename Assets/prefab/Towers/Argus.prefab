@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 7793677481049183094}
   - component: {fileID: 2621542623368089273}
   - component: {fileID: 3191863981368312429}
+  - component: {fileID: 3031943967847890881}
   m_Layer: 0
   m_Name: Argus
   m_TagString: Tower
@@ -237,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atkspd: 1
+  damage: 2
 --- !u!114 &6435503809609750919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +359,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 6
+--- !u!114 &3031943967847890881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733967122673772821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928fb442a89176c4cb2823dfdaedee86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2706390227215567009
 GameObject:
   m_ObjectHideFlags: 0

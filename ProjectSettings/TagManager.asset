@@ -14,6 +14,8 @@ TagManager:
   - LavaEnemy
   - TowerUI
   - ignore
+  - bufftower
+  - Towerplacement
   layers:
   - Default
   - TransparentFX

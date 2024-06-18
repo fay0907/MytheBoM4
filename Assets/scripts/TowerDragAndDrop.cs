@@ -35,7 +35,7 @@ public class TowerDragAndDrop : MonoBehaviour
             return;
         }
 
-        if (collision.CompareTag("Tower"))
+        if (collision.CompareTag("Towerplacement"))
         {
             collider = collision;
         }

@@ -1,66 +1,85 @@
 using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    
-    Vector3 differenceVector;
-    float distance;
-    Vector3 Direction;
-    [SerializeField] float speed = 20f;
-    Vector3 velocity;
-    Rigidbody2D rb;
-    private healthManager chiuaua;
-    public int hp = 5;
-    public bool onLava = false;
-    int maxAllowedDistance = 2;
+    private Transform target;
+    public int hp = 10;
+    public float speed = 2f;
+    private bool isDead = false; // Flag to track if the enemy is dead
 
-    // Vector3 velocity;
-    // float speed = 2f;
-    // Start is called before the first frame update
     void Start()
     {
-        chiuaua = FindObjectOfType<healthManager>();
-
-        float x = Random.Range(20, -20);
-        if (-12 < x && x < 12)
+        target = GameObject.FindGameObjectWithTag("Boat").transform;
+        if (target == null)
         {
-            transform.position = new Vector3(x, Random.Range(6, 11), 0);
+            Debug.LogError("Target (Boat) not found in the scene.");
+        }
+    }
+
+    void Update()
+    {
+        if (!IsDead() && target != null)
+        {
+            MoveTowardsTarget();
+
+            // Add logic to attack the boat when in range
+            float distanceToTarget = Vector3.Distance(transform.position, target.position);
+            if (distanceToTarget < 100.0f) // Adjust this distance as needed
+            {
+                AttackTarget();
+            }
+        }
+
+    }
+
+    void MoveTowardsTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        transform.position += direction * speed * Time.deltaTime;
+    }
+
+    void AttackTarget()
+    {
+        Debug.Log("attacking boat");
+        // Implement attack logic here
+        // For example, deal damage to the boat
+        HealthManager boatHealth = target.GetComponent<HealthManager>();
+        if (boatHealth != null)
+        {
+            boatHealth.removeHealth(hp); // Adjust damage amount as needed
+            BoatAttacked(hp);
+        }
+    }
+
+    public void TakeDamage()
+    {
+        if (IsDead())
+            return;
+
+        if (hp <= 0)
+        {
+            hp = 0;
+            isDead = true;
+        }
+    }
+    public void BoatAttacked(int damage)
+    {
+        hp -= damage;
+        TakeDamage();
+    }
+    public bool IsDead() // Method to check if the enemy is dead
+    {
+        if (isDead)
+        {
+            Debug.Log("isdead triggered");
+            Destroy(gameObject);
+            return true;
         }
         else
         {
-            transform.position = new Vector3(x, Random.Range(11, -5), 0);
+            return false;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        differenceVector = GameObject.FindWithTag("Boat").transform.position - transform.position;
-        Direction = differenceVector.normalized;
-        velocity = Direction * speed * Time.deltaTime;  // Remove Mathf.Clamp if not necessary
-        transform.position += velocity;
-    }
-    internal bool isDead()
-    {
-        if (hp <= 0)
-        {
-            Destroy(gameObject);
-            Debug.Log("attempted to destroy gameobject");
-            return true;
-        }
-        return false;
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Boat")
-        {
-            chiuaua.removeHealth(10);
-            Destroy(gameObject);
-        }
-    }
-
 }

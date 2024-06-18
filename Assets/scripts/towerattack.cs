@@ -5,30 +5,25 @@ public class TowerAttack : MonoBehaviour
 {
     private List<Enemy> enemiesInRange = new List<Enemy>();
     private Enemy currentEnemy;
-    private Money money;
     private bool isAttacking;
-    public float atkspd = 0.5f; // attackspeed in seconds  
-    internal int damage = 2;
-    internal int hpbeforeattack;
+    [SerializeField] internal float atkspd = 0.5f; // Attack speed in seconds
+    [SerializeField] internal int damage = 2;
+    internal bool removedEnemy = false;
+    internal int enemieskilled;
 
-    void Start()
-    { 
-        money = FindObjectOfType<Money>();
-        if (money == null)
-        {
-            Debug.Log("object not found");
-        }
+    private void Start()
+    {
+
     }
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            Enemy Enemy = other.GetComponent<Enemy>();
-            if (Enemy != null && !enemiesInRange.Contains(Enemy))
+            Debug.Log("collision");
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy != null && !enemiesInRange.Contains(enemy))
             {
-                enemiesInRange.Add(Enemy);
-                Debug.Log("Enemy added");
+                enemiesInRange.Add(enemy);
 
                 if (!isAttacking)
                 {
@@ -40,22 +35,18 @@ public class TowerAttack : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            Enemy Enemy = other.GetComponent<Enemy>();
-            if (Enemy != null && enemiesInRange.Contains(Enemy))
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy != null && enemiesInRange.Contains(enemy))
             {
-                enemiesInRange.Remove(Enemy);
-                
-                if (currentEnemy == Enemy)
+                enemiesInRange.Remove(enemy);
+
+                if (currentEnemy == enemy)
                 {
                     currentEnemy = null;
                     isAttacking = false;
-                    CancelInvoke("Attack");
-                    if (enemiesInRange.Count > 0)
-                    {
-                        StartAttacking();
-                    }
+                    StopAttacking();
                 }
             }
         }
@@ -65,12 +56,13 @@ public class TowerAttack : MonoBehaviour
     {
         if (enemiesInRange.Count > 0)
         {
-                currentEnemy = enemiesInRange[0];
-                hpbeforeattack = currentEnemy.hp; // Initialize hpbeforeattack when starting to attack
-                isAttacking = true;
-                InvokeRepeating("Attack", atkspd, atkspd); // Repeats the method at specified attack speed
+            currentEnemy = enemiesInRange[0];
+            isAttacking = true;
         }
     }
+            /*InvokeRepeating("Attack", 0f , atkspd); // Repeats the method at specified attack speed
+        }
+    }*/
 
     void Attack()
     {
@@ -80,42 +72,35 @@ public class TowerAttack : MonoBehaviour
             return;
         }
 
-        Debug.Log("Attacking: " + currentEnemy.name);
-
-        int damageDealt = damage; // Define the damage to be dealt
-
-        currentEnemy.hp -= damageDealt; // Deal damage
-        Debug.Log(damageDealt + "damage dealt");
-        if (currentEnemy.hp < 0)
-        {
-            currentEnemy.hp = 0;
-        }
-
-
-        money.moneyvalue += (hpbeforeattack - currentEnemy.hp); // Update moneyvalue based on HP difference
-        Debug.Log("money = " + money.moneyvalue);
-        hpbeforeattack = currentEnemy.hp; // Update hpbeforeattack after attack
-
-
-        bool enemyIsDead = currentEnemy.isDead(); // Check if the enemy is dead
-
-        if (enemyIsDead)
+        else if (currentEnemy.IsDead()) // Call the IsDead method to check if the enemy is dead
         {
             enemiesInRange.Remove(currentEnemy);
             currentEnemy = null;
+            Destroy(currentEnemy);
+            
 
             if (enemiesInRange.Count > 0)
             {
                 currentEnemy = enemiesInRange[0];
-                hpbeforeattack = currentEnemy.hp; // Initialize hpbeforeattack for the new enemy
             }
             else
             {
                 StopAttacking();
             }
         }
+        else
+        {
+            int hpdifference = currentEnemy.hp;
+            currentEnemy.hp -= damage;
+            if (currentEnemy.hp < 0)
+            {
+                currentEnemy.hp = 0;
+            }
+            Money.moneyvalue += hpdifference - currentEnemy.hp; //calculates difference between hp before and after attack
+            
+            currentEnemy.TakeDamage();
+        }
     }
-
     void StopAttacking()
     {
         isAttacking = false;

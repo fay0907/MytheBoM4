@@ -8,8 +8,7 @@ public class Enemies : MonoBehaviour
 
     void Start()
     {
-        // No initialization needed in Start if using Coroutine for spawning
-        Debug.Log("enemyprefab" + enemyPrefab.name);
+        Debug.Log("enemyprefab " + enemyPrefab.name);
     }
 
     void Update()
@@ -29,13 +28,18 @@ public class Enemies : MonoBehaviour
         if (newEnemyObject == null)
         {
             Debug.LogError("Failed to instantiate enemy prefab");
-            
             yield break;
         }
+
         // Access the Enemy component attached to the instantiated GameObject
         Enemy newEnemy = newEnemyObject.GetComponent<Enemy>();
-        
-        yield return new WaitForSeconds(3);
+        if (newEnemy == null)
+        {
+            Debug.LogError("Enemy component not found on instantiated prefab");
+            yield break;
+        }
+
+        yield return new WaitForSeconds(2);
         working = false;
     }
 }

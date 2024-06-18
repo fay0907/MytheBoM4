@@ -3,22 +3,30 @@ using UnityEngine;
 
 public class Money : MonoBehaviour
 {
-    public int moneyvalue = 0;
+    public static int moneyvalue = 0;
     public TextMeshProUGUI moneytext;
 
     void Start()
     {
-        Updatemoneytext();
+        UpdateMoneyText();
     }
 
     void Update()
     {
-        // Example: Update text every frame
-        Updatemoneytext();
+        UpdateMoneyText();
     }
 
-    void Updatemoneytext()
+    public void AddMoney(int amount)
     {
-        moneytext.text = moneyvalue.ToString();
+        moneyvalue += amount;
+        UpdateMoneyText();
+    }
+
+    void UpdateMoneyText()
+    {
+        if (moneytext != null)
+        {
+            moneytext.text = moneyvalue.ToString();
+        }
     }
 }

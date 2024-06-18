@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class healthManager : MonoBehaviour
+public class HealthManager : MonoBehaviour
 {
     public int Health = 200;
     public Image healthBar;

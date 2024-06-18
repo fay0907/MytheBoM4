@@ -5,6 +5,7 @@ using UnityEngine;
 public class bufftower : MonoBehaviour
 {
     TowerAttack towerAttack;
+    TowerDragAndDrop placement;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,10 +15,18 @@ public class bufftower : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Tower"))
         {
-            TowerAttack towerAttack = GetComponent<TowerAttack>();
-            towerAttack.atkspd = towerAttack.atkspd / 1.2f;
-            towerAttack.damage = Mathf.RoundToInt(towerAttack.damage * 1.25f);
+            TowerAttack towerAttack = other.GetComponent<TowerAttack>(); // Retrieve the attack component from the tower
+            TowerDragAndDrop placement = other.GetComponent<TowerDragAndDrop>();
+            if (towerAttack != null && placement.canAttack == true)
+            {
+                towerAttack.atkspd = towerAttack.atkspd / 1.2f;
+                towerAttack.damage = Mathf.RoundToInt(towerAttack.damage * 1.25f);
+                Debug.Log("Tower updated: " + towerAttack.ToString() + ", updated damage = " + towerAttack.damage);
+            }
+            else
+            {
+                Debug.LogWarning("No TowerAttack component found on the tower.");
+            }
         }
-        
     }
 }
