@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
+  towercost: 300
 --- !u!114 &-6419208818657271542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atkspd: 8
+  damage: 2
 --- !u!114 &-1022459383965060426
 MonoBehaviour:
   m_ObjectHideFlags: 0

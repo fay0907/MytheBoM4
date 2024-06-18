@@ -73,7 +73,6 @@ public class Enemy : MonoBehaviour
     {
         if (isDead)
         {
-            Debug.Log("isdead triggered");
             Destroy(gameObject);
             return true;
         }

@@ -439,6 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
+  towercost: 1000
 --- !u!114 &5582715842022146985
 MonoBehaviour:
   m_ObjectHideFlags: 0

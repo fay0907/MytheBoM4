@@ -100,8 +100,9 @@ public class TowerAttack : MonoBehaviour
             {
                 currentEnemy.hp = 0;
             }
-            Money.moneyvalue += hpdifference - currentEnemy.hp;
-            Debug.Log("damage dealt. added money: " + Money.moneyvalue);
+            int moneyadded = hpdifference - currentEnemy.hp;
+            Money.moneyvalue += moneyadded;
+            Debug.Log("damage dealt. added money: " + moneyadded);
 
             currentEnemy.TakeDamage();
         }
