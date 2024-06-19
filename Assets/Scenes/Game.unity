@@ -701,8 +701,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -602.5, y: -507.5}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchoredPosition: {x: -335.5, y: -452.5}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &382348917
 MonoBehaviour:
@@ -750,12 +750,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 899855136}
         m_TargetAssemblyTypeName: UiHandler, Assembly-CSharp
-        m_MethodName: Tower6
-        m_Mode: 1
+        m_MethodName: Tower
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -780,8 +780,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b5126c760be7cca429e56b788a1949be, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1526,12 +1526,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 899855136}
         m_TargetAssemblyTypeName: UiHandler, Assembly-CSharp
-        m_MethodName: Tower4
-        m_Mode: 1
+        m_MethodName: Tower
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2485,12 +2485,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 899855136}
         m_TargetAssemblyTypeName: UiHandler, Assembly-CSharp
-        m_MethodName: Tower2
-        m_Mode: 1
+        m_MethodName: Tower
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2752,8 +2752,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 899855136}
         m_TargetAssemblyTypeName: UiHandler, Assembly-CSharp
-        m_MethodName: Tower1
-        m_Mode: 1
+        m_MethodName: Tower
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3043,7 +3043,7 @@ GameObject:
   - component: {fileID: 899855136}
   m_Layer: 5
   m_Name: Buttons
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3158,6 +3158,7 @@ MonoBehaviour:
   - {fileID: 3830905640817616132, guid: 3f2a9fb5b8c66664692dfed82a93940d, type: 3}
   - {fileID: 6237682589937817482, guid: d1cb5a892fe74cf48a872230f70520b9, type: 3}
   - {fileID: 5727199221113359584, guid: 277ba129caabc8449801ec11479d0cde, type: 3}
+  mouseHasTower: 0
 --- !u!1 &942709309
 GameObject:
   m_ObjectHideFlags: 0
@@ -3791,7 +3792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: tower 6
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4363,7 +4364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: tower 5
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5254,12 +5255,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 899855136}
         m_TargetAssemblyTypeName: UiHandler, Assembly-CSharp
-        m_MethodName: Tower3
-        m_Mode: 1
+        m_MethodName: Tower
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7167,8 +7168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -667.5, y: -507.5}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchoredPosition: {x: -510.5, y: -452.5}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2124029113
 MonoBehaviour:
@@ -7216,12 +7217,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 899855136}
         m_TargetAssemblyTypeName: UiHandler, Assembly-CSharp
-        m_MethodName: Tower5
-        m_Mode: 1
+        m_MethodName: Tower
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7246,8 +7247,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2c4f2d6c931c3724ba673ef7243149e5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

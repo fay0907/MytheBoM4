@@ -16,6 +16,7 @@ TagManager:
   - ignore
   - bufftower
   - Towerplacement
+  - UI
   layers:
   - Default
   - TransparentFX
