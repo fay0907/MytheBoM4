@@ -3,43 +3,136 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    bool working = false;
+    internal int difficulty;
+    internal int wave;
+    internal bool wavespawner = false;
+    public GameObject weakestenemy;
+    public GameObject fastweakenemy;
 
-    void Start()
+    private void Update()
     {
-        Debug.Log("enemyprefab " + enemyPrefab.name);
-    }
-
-    void Update()
-    {
-        if (!working)
+        if (difficulty == 0)
         {
-            StartCoroutine(enemyspawner());
+            if (wave == 0 && wavespawner == false)
+            {
+                StartCoroutine(EnemySpawnerWave1());
+            }
+            else if (wave == 1 && wavespawner == false)
+            {
+                StartCoroutine(EnemySpawnerWave2());
+            }
+            else if (wave == 2 && wavespawner == false)
+            {
+                StartCoroutine(EnemySpawnerWave3());
+            }
+            else if (wave == 3 && wavespawner == false)
+            {
+                StartCoroutine(EnemySpawnerWave4());
+            }
         }
     }
 
-    IEnumerator enemyspawner()
+    private IEnumerator EnemySpawnerWave1()
     {
-        working = true;
+        wavespawner = true;
+        yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(3, 0, 5)));
+        yield return new WaitForSeconds(10);
+        wave++;
+        Money.moneyvalue += 100;
+        Debug.Log("wave finished " + wave.ToString());
+        wavespawner = false;
+    }
 
-        // Instantiate the enemy prefab
-        GameObject newEnemyObject = Instantiate(enemyPrefab);
-        if (newEnemyObject == null)
+    private IEnumerator EnemySpawnerWave2()
+    {
+        wavespawner = true;
+        yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(2, 0, 5)));
+        yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(0.5f, 0, 3)));
+        yield return new WaitForSeconds(10);
+        wave++;
+        Money.moneyvalue += 100;
+        wavespawner = false;
+    }
+
+    private IEnumerator EnemySpawnerWave3()
+    {
+        wavespawner = true;
+        yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(2, 0, 6)));
+        yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(3, 0, 6)));
+        yield return new WaitForSeconds(10);
+        wave++;
+        Money.moneyvalue += 150;
+        wavespawner = false;
+    }
+
+    private IEnumerator EnemySpawnerWave4()
+    {
+        wavespawner = true;
+        yield return StartCoroutine(FastWeakEnemySpawner(new SpawnerState(1.5f, 0, 8)));
+        yield return new WaitForSeconds(10);
+        wave++;
+        Money.moneyvalue += 150;
+        wavespawner = false;
+    }
+
+    private IEnumerator WeakestEnemySpawner(SpawnerState state)
+    {
+        while (state.CurrentAmount < state.Total)
         {
-            Debug.LogError("Failed to instantiate enemy prefab");
-            yield break;
-        }
+            GameObject newEnemyObject = Instantiate(weakestenemy);
+            state.CurrentAmount++;
 
-        // Access the Enemy component attached to the instantiated GameObject
-        Enemy newEnemy = newEnemyObject.GetComponent<Enemy>();
-        if (newEnemy == null)
+            if (newEnemyObject == null)
+            {
+                Debug.LogError("Failed to instantiate enemy prefab");
+                yield break;
+            }
+
+            Enemy newEnemy = newEnemyObject.GetComponent<Enemy>();
+            if (newEnemy == null)
+            {
+                Debug.LogError("Enemy component not found on instantiated prefab");
+                yield break;
+            }
+            Debug.Log("enemy spawn amount: " + state.CurrentAmount.ToString() + "of total: " + state.Total.ToString());
+            yield return new WaitForSeconds(state.Timer);
+        }
+    }
+
+    private IEnumerator FastWeakEnemySpawner(SpawnerState state)
+    {
+        while (state.CurrentAmount < state.Total)
         {
-            Debug.LogError("Enemy component not found on instantiated prefab");
-            yield break;
-        }
+            GameObject newEnemyObject = Instantiate(fastweakenemy);
+            state.CurrentAmount++;
 
-        yield return new WaitForSeconds(2.9f);
-        working = false;
+            if (newEnemyObject == null)
+            {
+                Debug.LogError("Failed to instantiate enemy prefab");
+                yield break;
+            }
+
+            Enemy newEnemy = newEnemyObject.GetComponent<Enemy>();
+            if (newEnemy == null)
+            {
+                Debug.LogError("Enemy component not found on instantiated prefab");
+                yield break;
+            }
+            yield return new WaitForSeconds(state.Timer);
+        }
+    }
+}
+
+public class SpawnerState
+{
+    public float Timer { get; }
+    public int CurrentAmount { get; set; }
+    public int Total { get; }
+
+    public SpawnerState(float timer, int currentAmount, int total)
+    {
+        Timer = timer;
+        CurrentAmount = currentAmount;
+        Total = total;
     }
 }

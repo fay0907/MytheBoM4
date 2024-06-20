@@ -28,7 +28,6 @@ public class TowerAttack : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("collision");
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null && !enemiesInRange.Contains(enemy))
             {
@@ -102,7 +101,6 @@ public class TowerAttack : MonoBehaviour
             }
             int moneyadded = hpdifference - currentEnemy.hp;
             Money.moneyvalue += moneyadded;
-            Debug.Log("damage dealt. added money: " + moneyadded);
 
             currentEnemy.TakeDamage();
         }

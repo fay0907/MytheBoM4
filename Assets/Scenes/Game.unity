@@ -4160,7 +4160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44fd58357e6d6b49b5705704aefdde8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8866814201109095265, guid: 501281b794e8d984186c255ee69ac791, type: 3}
+  weakestenemy: {fileID: 8866814201109095265, guid: 501281b794e8d984186c255ee69ac791, type: 3}
+  fastweakenemy: {fileID: 0}
 --- !u!4 &1125002675
 Transform:
   m_ObjectHideFlags: 0

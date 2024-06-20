@@ -33,8 +33,9 @@ public class TowerDragAndDrop : MonoBehaviour
         circleCollider.enabled = false;
         boxCollider.enabled = true;
         mousefull = false;
-    }
 
+    }
+    
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (canMove == false || collision is CircleCollider2D) //placed don't run placement code
@@ -67,12 +68,12 @@ public class TowerDragAndDrop : MonoBehaviour
         Debug.Log("hallo " + mousefull);
         LeftButtonCheck();
         {
-            if (canMove)
-            {
-                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
-                
-            }
+             if (canMove)
+             {
+                 Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                 transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+
+             }
         }
     }
     
@@ -80,12 +81,6 @@ public class TowerDragAndDrop : MonoBehaviour
     private void LeftButtonCheck()
     {
         if (!Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("collider = null");
-            return;
-        }
-
-        if (!(Money.moneyvalue >= towercost))
         {
             Debug.Log("collider = null");
             return;
