@@ -4330,7 +4330,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weakestenemy: {fileID: 8866814201109095265, guid: 501281b794e8d984186c255ee69ac791, type: 3}
-  fastweakenemy: {fileID: 0}
+  fastweakenemy: {fileID: 7656629175517071633, guid: 519ab2e9c7053554980bb3f832f8c1f6, type: 3}
+  weakenemy: {fileID: 1988073752436320639, guid: 572bb40deb679824aafa1753087f6818, type: 3}
+  enemy: {fileID: 742363431585167483, guid: 5f7b42ae8ea98a746bc0a9ed2ee48b05, type: 3}
+  fastenemy: {fileID: 4236530064031418713, guid: 0c0ecbf20b0ecd84bade5c24102b8d0b, type: 3}
+  fasterenemy: {fileID: 3770358188528217332, guid: d8594a61a705556479d09ca0f6cdb0ce, type: 3}
+  strongenemy: {fileID: 2037497813040714289, guid: 91487814d81b6c7418a54c59ebcb8327, type: 3}
+  boss1: {fileID: 3947736858978145672, guid: 08d8a071437d0694faa3df23b38278f5, type: 3}
 --- !u!4 &1125002675
 Transform:
   m_ObjectHideFlags: 0
