@@ -327,6 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   towercost: 600
+  mousefull: 0
 --- !u!114 &5325250168380709949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,7 +429,7 @@ CircleCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 10
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
