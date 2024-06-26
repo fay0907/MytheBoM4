@@ -6,6 +6,7 @@ public class JasonUpgradeBottomPath : MonoBehaviour
 {
     internal int bottomPathJason = 0;
     TowerAttack tower;
+    public GameObject jasonButtonT;
     JasonUpgradesTopPath toppath;
     public GameObject jason;
     CircleCollider2D circleCollider;
@@ -13,7 +14,7 @@ public class JasonUpgradeBottomPath : MonoBehaviour
     void Start()
     {
         tower = jason.GetComponent<TowerAttack>();
-        toppath = GetComponent<JasonUpgradesTopPath>();
+        toppath = jasonButtonT.GetComponent<JasonUpgradesTopPath>();
         circleCollider = jason.GetComponent<CircleCollider2D>();
     }
 

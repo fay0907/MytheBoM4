@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    internal int difficulty;
+    public static int difficulty;
     internal int wave;
     internal bool wavespawner = false;
     public GameObject weakestenemy;
@@ -18,110 +18,103 @@ public class Enemies : MonoBehaviour
 
     private void Update()
     {
-        if (difficulty == 0)
+        if (difficulty == 0 && wavespawner == false)
         {
-            if (wave == 0 && wavespawner == false)
-            {
-                StartCoroutine(EnemySpawnerWave1());
-            }
-            else if (wave == 1 && wavespawner == false)
-            {
-                StartCoroutine(EnemySpawnerWave2());
-            }
-            else if (wave == 2 && wavespawner == false)
-            {
-                StartCoroutine(EnemySpawnerWave3());
-            }
-            else if (wave == 3 && wavespawner == false)
-            {
-                StartCoroutine(EnemySpawnerWave4());
-            }
-            else if (wave == 4 && wavespawner == false)
-            {
-                StartCoroutine(EnemySpawnerWave5());
-            }
-            else if (wave == 5 && wavespawner == false)
-            {
-                StartCoroutine(EnemySpawnerWave6());
-            }
-            else if (wave == 6 && wavespawner == false)
-            {
-                StartCoroutine(EnemySpawnerWave7());
-            }
+            StartCoroutine(EasyMode());
+          
         }
+    }
+    private IEnumerator EasyMode()
+    {
+        wavespawner = true;
+        yield return StartCoroutine(EnemySpawnerWave1());
+        yield return StartCoroutine(EnemySpawnerWave2());
+        yield return StartCoroutine(EnemySpawnerWave3());
+        yield return StartCoroutine(EnemySpawnerWave4());
+        yield return StartCoroutine(EnemySpawnerWave5());
+        yield return StartCoroutine(EnemySpawnerWave6());
+        yield return StartCoroutine(EnemySpawnerWave7());
+        yield return StartCoroutine(EnemySpawnerWave8());
+        yield return StartCoroutine(EnemySpawnerWave9());
+        yield return StartCoroutine(EnemySpawnerWave10());
+        wavespawner = false;
     }
 
     private IEnumerator EnemySpawnerWave1()
     {
-        wavespawner = true;
         yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(3, 0, 5)));
         yield return new WaitForSeconds(10);
         wave++;
         Money.moneyvalue += 100;
         Debug.Log("wave finished " + wave.ToString());
-        wavespawner = false;
     }
 
     private IEnumerator EnemySpawnerWave2()
     {
-        wavespawner = true;
         yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(2, 0, 5)));
         yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(0.5f, 0, 3)));
         yield return new WaitForSeconds(10);
         wave++;
         Money.moneyvalue += 100;
-        wavespawner = false;
     }
 
     private IEnumerator EnemySpawnerWave3()
     {
-        wavespawner = true;
         yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(2, 0, 6)));
         yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(3, 0, 6)));
         yield return new WaitForSeconds(10);
-        wave++;
         Money.moneyvalue += 150;
-        wavespawner = false;
     }
 
     private IEnumerator EnemySpawnerWave4()
     {
-        wavespawner = true;
         yield return StartCoroutine(FastWeakEnemySpawner(new SpawnerState(1.5f, 0, 8)));
         yield return new WaitForSeconds(10);
-        wave++;
         Money.moneyvalue += 150;
-        wavespawner = false;
     }
     private IEnumerator EnemySpawnerWave5()
     {
-        wavespawner = true;
         yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(1, 0, 10)));
         yield return new WaitForSeconds(12);
-        wave++;
         Money.moneyvalue += 200;
-        wavespawner = false;
     }
     private IEnumerator EnemySpawnerWave6()
     {
-        wavespawner = true;
         yield return StartCoroutine(WeakEnemySpawner(new SpawnerState(4, 0, 3)));
         yield return new WaitForSeconds(10);
-        wave++;
         Money.moneyvalue += 200;
-        wavespawner = false;
     }
     private IEnumerator EnemySpawnerWave7()
     {
-        wavespawner = true;
         StartCoroutine(WeakestEnemySpawner(new SpawnerState(5, 0, 3)));
         yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(2, 0, 10)));
         yield return new WaitForSeconds(11);
-        wave++;
         Money.moneyvalue += 250;
-        wavespawner = false;
     }
-
+    private IEnumerator EnemySpawnerWave8()
+    {
+        StartCoroutine(WeakEnemySpawner(new SpawnerState(2, 0, 6)));
+        yield return StartCoroutine(FastWeakEnemySpawner(new SpawnerState(3, 0, 3)));
+        yield return new WaitForSeconds(12);
+        Money.moneyvalue += 400;
+    }
+    private IEnumerator EnemySpawnerWave9()
+    {
+        StartCoroutine(WeakEnemySpawner(new SpawnerState(3, 0, 5)));
+        StartCoroutine(WeakestEnemySpawner(new SpawnerState(1, 0, 8)));
+        yield return StartCoroutine(FastWeakEnemySpawner(new SpawnerState(1, 0, 5)));
+        yield return new WaitForSeconds(13);
+        Money.moneyvalue += 500;
+    }
+    private IEnumerator EnemySpawnerWave10()
+    {
+        yield return StartCoroutine(EnemySpawner(new SpawnerState(6, 0, 1)));
+        StartCoroutine(WeakEnemySpawner(new SpawnerState(0.5f, 0, 8)));
+        yield return StartCoroutine(FastWeakEnemySpawner(new SpawnerState(1, 0, 8)));
+        yield return new WaitForSeconds(13);
+        Money.moneyvalue += 500;
+    }
+ 
     private IEnumerator WeakestEnemySpawner(SpawnerState state)
     {
         while (state.CurrentAmount < state.Total)

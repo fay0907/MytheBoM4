@@ -7,12 +7,13 @@ public class JasonUpgradesTopPath : MonoBehaviour
 {
     internal int topPathJason = 0;
     TowerAttack tower;
+    public GameObject jasonButtonB;
     JasonUpgradeBottomPath bottompath;
     public GameObject jason;
     private void Start()
     {
         tower = jason.GetComponent<TowerAttack>();
-        bottompath = GetComponent<JasonUpgradeBottomPath>();
+        bottompath = jasonButtonB.GetComponent<JasonUpgradeBottomPath>();
     }
     public void UpgradeJasonT()
     {
