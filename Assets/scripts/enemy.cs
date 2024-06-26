@@ -1,9 +1,11 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    public Image healthbar;
     private Transform target;
     public int hp = 10;
     public float speed = 2f;
@@ -31,7 +33,7 @@ public class Enemy : MonoBehaviour
                 AttackTarget();
             }
         }
-
+        healthbar.fillAmount = (hp / 200f);
     }
 
     void MoveTowardsTarget()
