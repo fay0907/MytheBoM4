@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6274298313323870169}
   - component: {fileID: 2548054000041373730}
   - component: {fileID: 2729656321905801772}
-  - component: {fileID: 346980244357871325}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -121,7 +120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 346980244357871325}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: argusupgradestoppath, Assembly-CSharp
         m_MethodName: upgradeargusT
         m_Mode: 1
@@ -133,19 +132,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &346980244357871325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298467184584508684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0165909048440941b04d0ee64d4057e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  argus: {fileID: 1733967122673772821}
 --- !u!1 &1733967122673772821
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  towercost: 250
+  towercost: 750
   mousefull: 0
 --- !u!114 &-6020380126444517418
 MonoBehaviour:
@@ -411,7 +397,6 @@ GameObject:
   - component: {fileID: 4825599093571956977}
   - component: {fileID: 6793215919695314204}
   - component: {fileID: 8231178947625511210}
-  - component: {fileID: 5530822352140980566}
   m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -512,7 +497,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5530822352140980566}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: argusupgradesbottompath, Assembly-CSharp
         m_MethodName: upgradeargusB
         m_Mode: 1
@@ -532,19 +517,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2706390227215567009}
   m_CullTransparentMesh: 1
---- !u!114 &5530822352140980566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2706390227215567009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff49feb2561958a409a6bee27f9180c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  argus: {fileID: 1733967122673772821}
 --- !u!1 &3739089237143204398
 GameObject:
   m_ObjectHideFlags: 0

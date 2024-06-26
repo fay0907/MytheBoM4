@@ -33,9 +33,8 @@ public class TowerDragAndDrop : MonoBehaviour
         circleCollider.enabled = false;
         boxCollider.enabled = true;
         mousefull = false;
-
     }
-    
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (canMove == false || collision is CircleCollider2D) //placed don't run placement code
@@ -67,16 +66,15 @@ public class TowerDragAndDrop : MonoBehaviour
     {
         Debug.Log("hallo " + mousefull);
         LeftButtonCheck();
-        {
-             if (canMove)
-             {
-                 Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                 transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
 
-             }
+        if (canMove)
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
         }
+
+        BackspaceCheck();
     }
-    
 
     private void LeftButtonCheck()
     {
@@ -105,7 +103,7 @@ public class TowerDragAndDrop : MonoBehaviour
             uiHandler.mouseHasTower = false;
             transform.position = collider.gameObject.transform.position;
             tower.SetTowerPlaced();
-            
+
             canMove = false;
             mousefull = false;
             Money.moneyvalue -= towercost;
@@ -135,6 +133,17 @@ public class TowerDragAndDrop : MonoBehaviour
 
             // Disable the script only after enabling the collider
             this.enabled = false;
+        }
+    }
+
+    private void BackspaceCheck()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            // Inform the UI handler that the tower is no longer being placed
+            uiHandler.mouseHasTower = false;
+            // Destroy the game object
+            Destroy(gameObject);
         }
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5892986486476945309}
   - component: {fileID: 8304893254087877958}
   - component: {fileID: 4797669663979861683}
+  - component: {fileID: 4644650042018868647}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -35,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 302}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -4.6248, y: 70}
+  m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5892986486476945309
 CanvasRenderer:
@@ -119,7 +120,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8304893254087877958}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4644650042018868647}
+        m_TargetAssemblyTypeName: JasonUpgradesTopPath, Assembly-CSharp
+        m_MethodName: UpgradeJasonT
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4644650042018868647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752527908383554025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0165909048440941b04d0ee64d4057e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jason: {fileID: 8381464558677863705}
 --- !u!1 &1429973830310430391
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +158,7 @@ GameObject:
   - component: {fileID: 9155542033865724432}
   - component: {fileID: 5634464182224297047}
   - component: {fileID: 3930505922242550620}
+  - component: {fileID: 9154312159027459202}
   m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -155,8 +182,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: -150}
+  m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9155542033865724432
 MonoBehaviour:
@@ -231,7 +258,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9154312159027459202}
+        m_TargetAssemblyTypeName: JasonUpgradeBottomPath, Assembly-CSharp
+        m_MethodName: UpgradeJasonB
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3930505922242550620
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -240,6 +279,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429973830310430391}
   m_CullTransparentMesh: 1
+--- !u!114 &9154312159027459202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429973830310430391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff49feb2561958a409a6bee27f9180c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jason: {fileID: 8381464558677863705}
 --- !u!1 &6531513701172851726
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +534,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  towercost: 500
+  towercost: 250
+  mousefull: 0
 --- !u!114 &-275800352522708003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c821a90aafa8154d929bbf3b598e25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkspd: 20
+  atkspd: 1
   damage: 2
 --- !u!114 &-1058904427434752830
 MonoBehaviour:
@@ -616,7 +669,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.8900002
+  m_Radius: 6
 --- !u!1 &8504234155911413309
 GameObject:
   m_ObjectHideFlags: 0
