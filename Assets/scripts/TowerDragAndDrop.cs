@@ -64,16 +64,17 @@ public class TowerDragAndDrop : MonoBehaviour
 
     private void Update()
     {
+
         Debug.Log("hallo " + mousefull);
-        LeftButtonCheck();
+            LeftButtonCheck();
 
-        if (canMove)
-        {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
-        }
+            if (canMove)
+            {
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+            }
 
-        BackspaceCheck();
+            BackspaceCheck();
     }
 
     private void LeftButtonCheck()
@@ -98,7 +99,7 @@ public class TowerDragAndDrop : MonoBehaviour
             return;
         }
 
-        if (!tower.HasTower())
+        if (!tower.HasTower() && Money.moneyvalue >= towercost)
         {
             uiHandler.mouseHasTower = false;
             transform.position = collider.gameObject.transform.position;
@@ -133,6 +134,11 @@ public class TowerDragAndDrop : MonoBehaviour
 
             // Disable the script only after enabling the collider
             this.enabled = false;
+        }
+        else
+        {
+            Destroy(gameObject);
+            canMove = true;
         }
     }
 

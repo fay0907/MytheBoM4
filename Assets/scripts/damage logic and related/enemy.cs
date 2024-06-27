@@ -1,12 +1,11 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Enemy2 : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    public Image healthbar;
     private Transform target;
+    public static int deaths = 0;
     public int hp = 10;
     public float speed = 2f;
     private bool isDead = false; // Flag to track if the enemy is dead
@@ -22,27 +21,27 @@ public class Enemy2 : MonoBehaviour
 
     void Update()
     {
-        if (!IsDead2() && target != null)
+        if (!IsDead() && target != null)
         {
-            MoveTowardsTarget2();
+            MoveTowardsTarget();
 
             // Add logic to attack the boat when in range
             float distanceToTarget = Vector3.Distance(transform.position, target.position);
             if (distanceToTarget < 100.0f) // Adjust this distance as needed
             {
-                AttackTarget2();
+                AttackTarget();
             }
         }
-        healthbar.fillAmount = (hp / 200f);
+
     }
 
-    void MoveTowardsTarget2()
+    void MoveTowardsTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
     }
 
-    void AttackTarget2()
+    void AttackTarget()
     {
         Debug.Log("attacking boat");
         // Implement attack logic here
@@ -51,13 +50,13 @@ public class Enemy2 : MonoBehaviour
         if (boatHealth != null)
         {
             boatHealth.removeHealth(hp); // Adjust damage amount as needed
-            BoatAttacked2(hp);
+            BoatAttacked(hp);
         }
     }
 
-    public void TakeDamage2()
+    public void TakeDamage()
     {
-        if (IsDead2())
+        if (IsDead())
             return;
 
         if (hp <= 0)
@@ -66,15 +65,16 @@ public class Enemy2 : MonoBehaviour
             isDead = true;
         }
     }
-    public void BoatAttacked2(int damage)
+    public void BoatAttacked(int damage)
     {
         hp -= damage;
-        TakeDamage2();
+        TakeDamage();
     }
-    public bool IsDead2() // Method to check if the enemy is dead
+    public bool IsDead() // Method to check if the enemy is dead
     {
         if (isDead)
         {
+            deaths++;
             Destroy(gameObject);
             return true;
         }

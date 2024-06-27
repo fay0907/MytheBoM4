@@ -5,7 +5,7 @@ using UnityEngine;
 public class JasonUpgradeBottomPath : MonoBehaviour
 {
     internal int bottomPathJason = 0;
-    TowerAttack tower;
+    private TowerAttack tower;
     public GameObject jasonButtonT;
     JasonUpgradesTopPath toppath;
     public GameObject jason;
@@ -57,6 +57,7 @@ public class JasonUpgradeBottomPath : MonoBehaviour
             tower.atkspd += 1;
             circleCollider.radius = 14;
             bottomPathJason++;
+            Money.moneyvalue -= 12000;
         }
     }
 }

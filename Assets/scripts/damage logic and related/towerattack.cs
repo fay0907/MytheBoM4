@@ -4,11 +4,21 @@ using UnityEngine;
 public class TowerAttack : MonoBehaviour
 {
     private List<Enemy> enemiesInRange = new List<Enemy>();
-    private Enemy currentEnemy;
+    internal Enemy currentEnemy;
     private bool isAttacking;
+    private Transform spawn;
     [SerializeField] internal float atkspd = 0.5f; // Attack speed in seconds
     [SerializeField] internal int damage = 2;
     private float attackCooldown = 0f; // Cooldown timer
+    internal bool attacked = false;
+    public GameObject tower;
+    public GameObject projectile;
+    private void Start()
+    {
+        spawn = tower.transform;
+    }
+    
+
 
     void Update()
     {
@@ -93,14 +103,15 @@ public class TowerAttack : MonoBehaviour
         }
         else
         {
-            int hpdifference = currentEnemy.hp;
-            currentEnemy.hp -= damage;
-            if (currentEnemy.hp < 0)
-            {
-                currentEnemy.hp = 0;
-            }
-            int moneyadded = hpdifference - currentEnemy.hp;
-            Money.moneyvalue += moneyadded;
+            GameObject instantiatedProjectile = Instantiate(projectile, spawn.position, spawn.rotation);
+            // Log information about the instantiated projectile
+            Debug.Log("Projectile instantiated: " + instantiatedProjectile.name); // Check instantiation in console
+            Debug.Log("Spawn position: " + spawn.position); // Log spawn position
+            Debug.Log("Spawn rotation: " + spawn.rotation.eulerAngles); // Log spawn rotation
+
+            // Log position of the instantiated projectile
+            Debug.Log("Projectile position: " + instantiatedProjectile.transform.position);
+            Debug.Log("Projectile rotation: " + instantiatedProjectile.transform.rotation.eulerAngles);
 
             currentEnemy.TakeDamage();
         }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class JasonUpgradesTopPath : MonoBehaviour
 {
     internal int topPathJason = 0;
-    TowerAttack tower;
+    internal TowerAttack tower;
     public GameObject jasonButtonB;
     JasonUpgradeBottomPath bottompath;
     public GameObject jason;

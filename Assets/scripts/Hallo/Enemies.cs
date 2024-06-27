@@ -37,6 +37,11 @@ public class Enemies : MonoBehaviour
         yield return StartCoroutine(EnemySpawnerWave8());
         yield return StartCoroutine(EnemySpawnerWave9());
         yield return StartCoroutine(EnemySpawnerWave10());
+        yield return StartCoroutine(EnemySpawnerWave11());
+        yield return StartCoroutine(EnemySpawnerWave12());
+        yield return StartCoroutine(EnemySpawnerWave13());
+        yield return StartCoroutine(EnemySpawnerWave14());
+        yield return StartCoroutine(EnemySpawnerWave15());
         wavespawner = false;
     }
 
@@ -113,6 +118,47 @@ public class Enemies : MonoBehaviour
         yield return StartCoroutine(FastWeakEnemySpawner(new SpawnerState(1, 0, 8)));
         yield return new WaitForSeconds(13);
         Money.moneyvalue += 500;
+    }
+    private IEnumerator EnemySpawnerWave11()
+    {
+        yield return StartCoroutine(EnemySpawner(new SpawnerState(5, 0, 2)));
+        yield return new WaitForSeconds(6);
+        StartCoroutine(WeakEnemySpawner(new SpawnerState(2, 0, 8)));
+        yield return StartCoroutine(WeakestEnemySpawner(new SpawnerState(0.2f, 0, 8)));
+        yield return new WaitForSeconds(10);
+        Money.moneyvalue += 300;
+    }
+    private IEnumerator EnemySpawnerWave12()
+    {
+        StartCoroutine(EnemySpawner(new SpawnerState(2, 0, 1)));
+        yield return StartCoroutine(WeakEnemySpawner(new SpawnerState(1, 0, 8)));
+        yield return new WaitForSeconds(11);
+        Money.moneyvalue += 700;
+    }
+    private IEnumerator EnemySpawnerWave13()
+    {
+        yield return StartCoroutine(FastEnemySpawner(new SpawnerState(7, 0, 1)));
+        StartCoroutine(WeakEnemySpawner(new SpawnerState(1, 0, 8)));
+        yield return StartCoroutine(EnemySpawner(new SpawnerState(3, 0, 5)));
+        yield return new WaitForSeconds(12);
+        Money.moneyvalue += 300;
+    }
+    private IEnumerator EnemySpawnerWave14()
+    {
+        yield return StartCoroutine(FasterEnemySpawner(new SpawnerState(6, 0, 2)));
+        StartCoroutine(FastWeakEnemySpawner(new SpawnerState(1, 0, 7)));
+        yield return StartCoroutine(WeakEnemySpawner(new SpawnerState(1.5f, 0, 5)));
+        Money.moneyvalue += 800;
+
+    }
+    private IEnumerator EnemySpawnerWave15()
+    {
+        StartCoroutine(EnemySpawner(new SpawnerState(1, 0, 3)));
+        StartCoroutine(FastEnemySpawner(new SpawnerState(8, 0, 2)));
+        StartCoroutine(WeakEnemySpawner(new SpawnerState(1, 0, 12)));
+        yield return StartCoroutine(FastWeakEnemySpawner(new SpawnerState(0.5f, 0, 15)));
+        Money.moneyvalue += 500;
+
     }
  
     private IEnumerator WeakestEnemySpawner(SpawnerState state)
