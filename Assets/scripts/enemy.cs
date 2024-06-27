@@ -7,7 +7,7 @@ public class Enemy2 : MonoBehaviour
 {
     public Image healthbar;
     private Transform target;
-    public int hp = 10;
+    public int hp = 5;
     public float speed = 2f;
     private bool isDead = false; // Flag to track if the enemy is dead
 
@@ -33,7 +33,7 @@ public class Enemy2 : MonoBehaviour
                 AttackTarget2();
             }
         }
-        healthbar.fillAmount = (hp / 200f);
+        healthbar.fillAmount = (hp / 5f);
     }
 
     void MoveTowardsTarget2()

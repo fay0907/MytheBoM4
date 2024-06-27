@@ -255,7 +255,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &2796914607859976412
+--- !u!1 &2221178339491195868
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,8 +263,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 751490225083896057}
-  - component: {fileID: 7865117525151775079}
+  - component: {fileID: 1492534823068431060}
+  - component: {fileID: 44995879765963911}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -272,31 +272,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &751490225083896057
+--- !u!4 &1492534823068431060
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2796914607859976412}
+  m_GameObject: {fileID: 2221178339491195868}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.82875013, y: 0.50628585, z: 0}
+  m_LocalPosition: {x: 4359.389, y: 1001.9289, z: -14.083385}
   m_LocalScale: {x: 2.5, y: 2.857143, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6189282886912199213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7865117525151775079
+--- !u!114 &44995879765963911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2796914607859976412}
+  m_GameObject: {fileID: 2221178339491195868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2ed21bdeb4b4d14d882b07fff2089df, type: 3}
+  m_Script: {fileID: 11500000, guid: f5db88d34beea5a408c350ff3c21c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MyButton: {fileID: 671339229301453805}
@@ -560,7 +560,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3829706314706993755}
-  - {fileID: 751490225083896057}
+  - {fileID: 1492534823068431060}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5145407333793271988
@@ -975,7 +975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4167760148717624818
 RectTransform:
   m_ObjectHideFlags: 0

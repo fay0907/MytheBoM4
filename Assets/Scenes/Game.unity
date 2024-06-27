@@ -646,6 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c367cf19571eb774eb4c618af691a78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 0
 --- !u!4 &149148325
 Transform:
   m_ObjectHideFlags: 0
@@ -786,8 +787,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 500}
-  m_SizeDelta: {x: 1500, y: 80}
+  m_AnchoredPosition: {x: -1.5403, y: 498.16077}
+  m_SizeDelta: {x: 1608.7378, y: 116.8171}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &204907435
 GameObject:
@@ -2890,7 +2891,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: 7482667652216324306, guid: 97750f5347554a249add5cfcb7bf5e00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2915,15 +2916,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 40ee5d71250c92842a4f632de718e937, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2948,7 +2949,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764511873}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -77.1}
+  m_LocalPosition: {x: 0, y: 0, z: 60}
   m_LocalScale: {x: 0.34, y: 0.34, z: 0.34}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2956,8 +2957,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 500}
-  m_SizeDelta: {x: 1520, y: 110}
+  m_AnchoredPosition: {x: -23.2, y: 495.7}
+  m_SizeDelta: {x: 1799.6584, y: 250.1278}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &770206401
 GameObject:
@@ -5219,8 +5220,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.1256, y: 500}
-  m_SizeDelta: {x: 1499.261, y: 80}
+  m_AnchoredPosition: {x: -1.9153, y: 500.55502}
+  m_SizeDelta: {x: 1613.7991, y: 104.9027}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1125002673
 GameObject:
@@ -5251,7 +5252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44fd58357e6d6b49b5705704aefdde8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weakestenemy: {fileID: 8866814201109095265, guid: 501281b794e8d984186c255ee69ac791, type: 3}
+  weakestenemy: {fileID: 6266484465815559830, guid: b8231f51766782c45a7590e628be4b67, type: 3}
   fastweakenemy: {fileID: 6378515989279203152, guid: ea4428d3507f21b48b7c3e385d4c9a38, type: 3}
   weakenemy: {fileID: 4027261399157741466, guid: e5cb94ad03f33c9468e3835f0466553e, type: 3}
   enemy: {fileID: 742363431585167483, guid: 5f7b42ae8ea98a746bc0a9ed2ee48b05, type: 3}
@@ -8467,9 +8468,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1583518264}
-  - {fileID: 764511877}
   - {fileID: 172792701}
   - {fileID: 1109838733}
+  - {fileID: 764511877}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

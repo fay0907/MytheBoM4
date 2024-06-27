@@ -291,6 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 1808266748}
   photos:
+  - {fileID: 21300000, guid: 3e12e6a448c219242bf1ffd75fdd7e8b, type: 3}
   - {fileID: 21300000, guid: 64e9a8d9033c5bc49bc428c37952ad9b, type: 3}
   - {fileID: 21300000, guid: 766004620b87a014497d25e2503d107d, type: 3}
   - {fileID: 21300000, guid: 94dd0df56473b6e499c8474f3c9f85ed, type: 3}
@@ -491,6 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c367cf19571eb774eb4c618af691a78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 0
 --- !u!4 &893666078
 Transform:
   m_ObjectHideFlags: 0

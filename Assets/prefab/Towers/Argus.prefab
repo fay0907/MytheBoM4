@@ -254,6 +254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkspd: 1
   damage: 2
+  tower: {fileID: 0}
+  projectile: {fileID: 0}
 --- !u!114 &6435503809609750919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3367755527040529486}
-  - component: {fileID: 8926359574052274638}
+  - component: {fileID: 5712518769384430993}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -418,7 +420,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 664113294651315774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8926359574052274638
+--- !u!114 &5712518769384430993
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,7 +429,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1993314925217499257}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2ed21bdeb4b4d14d882b07fff2089df, type: 3}
+  m_Script: {fileID: 11500000, guid: f5db88d34beea5a408c350ff3c21c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MyButton: {fileID: 11172381846964006}
@@ -579,7 +581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8250789650453625437
 RectTransform:
   m_ObjectHideFlags: 0
