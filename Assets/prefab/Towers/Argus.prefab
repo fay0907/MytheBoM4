@@ -165,7 +165,7 @@ Transform:
   m_GameObject: {fileID: 1733967122673772821}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4, y: 0.201, z: 0}
+  m_LocalPosition: {x: -4.207, y: 0.208, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -254,8 +254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkspd: 1
   damage: 2
-  tower: {fileID: 0}
-  projectile: {fileID: 0}
+  tower: {fileID: 1733967122673772821}
+  projectile: {fileID: 341078328821678992, guid: 760a224dad7a1fb4989260ccee4ff25e, type: 3}
 --- !u!114 &6435503809609750919
 MonoBehaviour:
   m_ObjectHideFlags: 0

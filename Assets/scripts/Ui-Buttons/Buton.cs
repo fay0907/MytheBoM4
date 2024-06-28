@@ -28,6 +28,5 @@ public class SceneChanger : MonoBehaviour
             SceneManager.LoadScene(sceneName);
             // laad infinite mode
         }
-
     }
 }

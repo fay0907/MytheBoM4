@@ -614,10 +614,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c821a90aafa8154d929bbf3b598e25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkspd: 8
+  atkspd: 4
   damage: 2
-  tower: {fileID: 0}
-  projectile: {fileID: 0}
+  tower: {fileID: 6237682589937817482}
+  projectile: {fileID: 6506929088254775019, guid: 37a500610f29e584bb32f465609c00c0, type: 3}
 --- !u!114 &-1022459383965060426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,7 +710,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6237682589937817482}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -737,7 +737,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.24
+  m_Radius: 15
 --- !u!1 &6638189799634130562
 GameObject:
   m_ObjectHideFlags: 0
