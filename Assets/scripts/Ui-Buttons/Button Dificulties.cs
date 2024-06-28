@@ -8,6 +8,8 @@ public class SceneChanger : MonoBehaviour
     public int difficulty;
     public void ChangeScene(string sceneName)
     {
+        SceneManager.LoadScene(sceneName);
+
         if (difficulty == 0)
         {
             SceneManager.LoadScene(sceneName);
