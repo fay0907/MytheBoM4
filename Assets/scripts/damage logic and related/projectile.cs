@@ -15,8 +15,6 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         towerattack = FindNearestTower();
-        Debug.Log("i work");
-        Debug.Log(towerattack.damage.ToString());
     }
 
     // Update is called once per frame

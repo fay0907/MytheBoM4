@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    public static int difficulty;
+    internal int difficulty = DifficultyButton.difficulty;
     internal int wave;
     internal bool wavespawner = false;
     public GameObject weakestenemy;
@@ -16,12 +16,15 @@ public class Enemies : MonoBehaviour
     public GameObject strongenemy;
     public GameObject boss1;
 
+    private void Start()
+    {
+        Debug.Log(difficulty);
+    }
     private void Update()
     {
-        if (difficulty == 0 && wavespawner == false)
+        if (difficulty == 1 && wavespawner == false)
         {
             StartCoroutine(EasyMode());
-          
         }
     }
     private IEnumerator EasyMode()

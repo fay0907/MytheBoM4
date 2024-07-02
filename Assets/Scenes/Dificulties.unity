@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 601953257}
   - component: {fileID: 601953256}
   - component: {fileID: 601953255}
+  - component: {fileID: 601953258}
   m_Layer: 5
   m_Name: Infinite
   m_TagString: Untagged
@@ -379,10 +380,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2013545424}
+      - m_Target: {fileID: 601953258}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: difficultyselection
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -429,6 +430,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601953253}
   m_CullTransparentMesh: 1
+--- !u!114 &601953258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601953253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c367cf19571eb774eb4c618af691a78f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyButton: 4
 --- !u!1 &804877394
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +547,7 @@ GameObject:
   - component: {fileID: 1221265149}
   - component: {fileID: 1221265148}
   - component: {fileID: 1221265147}
+  - component: {fileID: 1221265150}
   m_Layer: 5
   m_Name: Hard
   m_TagString: Untagged
@@ -604,10 +619,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2013545424}
+      - m_Target: {fileID: 1221265150}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: difficultyselection
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -654,6 +669,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221265145}
   m_CullTransparentMesh: 1
+--- !u!114 &1221265150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221265145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c367cf19571eb774eb4c618af691a78f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyButton: 3
 --- !u!1 &1542460790
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +694,7 @@ GameObject:
   - component: {fileID: 1542460794}
   - component: {fileID: 1542460793}
   - component: {fileID: 1542460792}
+  - component: {fileID: 1542460795}
   m_Layer: 5
   m_Name: Medium
   m_TagString: Untagged
@@ -737,10 +766,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2013545424}
+      - m_Target: {fileID: 1542460795}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: difficultyselection
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -787,6 +816,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542460790}
   m_CullTransparentMesh: 1
+--- !u!114 &1542460795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542460790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c367cf19571eb774eb4c618af691a78f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyButton: 2
 --- !u!1 &1579994971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,51 +1365,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881493164}
   m_CullTransparentMesh: 1
---- !u!1 &2013545423
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2013545425}
-  - component: {fileID: 2013545424}
-  m_Layer: 0
-  m_Name: Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2013545424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013545423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c367cf19571eb774eb4c618af691a78f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  difficulty: 0
---- !u!4 &2013545425
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013545423}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 835.51794, y: 413.07538, z: 12.480176}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2023637933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,6 +1377,7 @@ GameObject:
   - component: {fileID: 2023637937}
   - component: {fileID: 2023637936}
   - component: {fileID: 2023637935}
+  - component: {fileID: 2023637938}
   m_Layer: 5
   m_Name: Easy
   m_TagString: Untagged
@@ -1451,16 +1449,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2013545424}
+      - m_Target: {fileID: 2023637938}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: difficultyselection
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Easy
+          m_StringArgument: Game
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2023637936
@@ -1501,6 +1499,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023637933}
   m_CullTransparentMesh: 1
+--- !u!114 &2023637938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023637933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c367cf19571eb774eb4c618af691a78f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyButton: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1508,4 +1519,3 @@ SceneRoots:
   - {fileID: 804877397}
   - {fileID: 571748927}
   - {fileID: 544263889}
-  - {fileID: 2013545425}

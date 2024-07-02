@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Difficulties/Hard.unity
     guid: 0a2dee293aeaae844b6d9aa927df03bc
   - enabled: 1
-    path: Assets/Scenes/Difficulties/Normal.unity
+    path: Assets/Scenes/Difficulties/Game.unity
     guid: 8ebc94ba0b408df43b523faaac8acd4d
   - enabled: 1
     path: Assets/Scenes/Difficulties/infinite.unity
