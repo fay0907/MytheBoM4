@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     private Transform target;
     public int speed = 500;
     public GameObject kaboom;
+    internal bool hit = false;
     
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,7 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            hit = true;
             Instantiate(kaboom, target.position, target.rotation);
             int hpbeforeattack = towerattack.currentEnemy.hp;
             towerattack.currentEnemy.hp -= towerattack.damage;

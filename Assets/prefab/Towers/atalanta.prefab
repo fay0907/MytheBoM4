@@ -713,7 +713,7 @@ MonoBehaviour:
   atkspd: 0.5
   damage: 1
   tower: {fileID: 7239362959749987700}
-  projectile: {fileID: 1188616167592724646, guid: ed4be9b312997aa4eb395116eade2e3d, type: 3}
+  projectile: {fileID: 6516976735266098469, guid: 19443c65e9be84041ab25462d0c241c5, type: 3}
 --- !u!114 &434459486143333247
 MonoBehaviour:
   m_ObjectHideFlags: 0

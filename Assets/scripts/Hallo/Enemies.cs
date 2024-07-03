@@ -45,7 +45,7 @@ public class Enemies : MonoBehaviour
         yield return StartCoroutine(EnemySpawnerWave13());
         yield return StartCoroutine(EnemySpawnerWave14());
         yield return StartCoroutine(EnemySpawnerWave15());
-        wavespawner = false;
+        yield return StartCoroutine(EnemySpawnerWave16());
     }
 
     private IEnumerator EnemySpawnerWave1()
@@ -162,6 +162,10 @@ public class Enemies : MonoBehaviour
         yield return StartCoroutine(FastWeakEnemySpawner(new SpawnerState(0.5f, 0, 15)));
         Money.moneyvalue += 500;
 
+    }
+    private IEnumerator EnemySpawnerWave16()
+    {
+        yield return StartCoroutine(StrongEnemySpawner(new SpawnerState(1, 0, 1)));
     }
  
     private IEnumerator WeakestEnemySpawner(SpawnerState state)
