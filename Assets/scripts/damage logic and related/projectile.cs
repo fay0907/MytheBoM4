@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            hit = true;
+            
             Instantiate(kaboom, target.position, target.rotation);
             int hpbeforeattack = towerattack.currentEnemy.hp;
             towerattack.currentEnemy.hp -= towerattack.damage;

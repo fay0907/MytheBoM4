@@ -5572,7 +5572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44fd58357e6d6b49b5705704aefdde8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weakestenemy: {fileID: 6266484465815559830, guid: b8231f51766782c45a7590e628be4b67, type: 3}
+  weakestenemy: {fileID: 8866814201109095265, guid: 501281b794e8d984186c255ee69ac791, type: 3}
   fastweakenemy: {fileID: 6378515989279203152, guid: ea4428d3507f21b48b7c3e385d4c9a38, type: 3}
   weakenemy: {fileID: 4027261399157741466, guid: e5cb94ad03f33c9468e3835f0466553e, type: 3}
   enemy: {fileID: 742363431585167483, guid: 5f7b42ae8ea98a746bc0a9ed2ee48b05, type: 3}

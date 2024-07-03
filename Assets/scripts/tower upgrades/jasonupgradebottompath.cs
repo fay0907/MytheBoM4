@@ -10,6 +10,7 @@ public class JasonUpgradeBottomPath : MonoBehaviour
     JasonUpgradesTopPath toppath;
     public GameObject jason;
     CircleCollider2D circleCollider;
+    internal bool locked;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,10 @@ public class JasonUpgradeBottomPath : MonoBehaviour
 
     public void UpgradeJasonB()
     {
+        if (toppath.topPathJason >= 3)
+        {
+            locked = true;
+        }
         if (bottomPathJason == 0 && Money.moneyvalue >= 100)
         {
             circleCollider.radius = 7;
@@ -28,14 +33,14 @@ public class JasonUpgradeBottomPath : MonoBehaviour
             bottomPathJason++;
             Debug.Log("upgraded radius. new radius: " + circleCollider.radius.ToString());
         }
-        if (bottomPathJason == 1 && Money.moneyvalue >= 300)
+        else if (bottomPathJason == 1 && Money.moneyvalue >= 300)
         {
             circleCollider.radius = 9;
             Money.moneyvalue -= 300;
             bottomPathJason++;
             Debug.Log("upgrade works");
         }
-        if (bottomPathJason == 2 && toppath.topPathJason <= 2 && Money.moneyvalue >= 1000)
+        else if (bottomPathJason == 2 && toppath.topPathJason <= 2 && Money.moneyvalue >= 1000)
         {
             circleCollider.radius = 10.5f;
             tower.damage += 5;
@@ -44,14 +49,14 @@ public class JasonUpgradeBottomPath : MonoBehaviour
             Money.moneyvalue -= 1000;
             Debug.Log("toppath locked");
         }
-        if (bottomPathJason == 3 && Money.moneyvalue >= 3000)
+        else if (bottomPathJason == 3 && Money.moneyvalue >= 3000)
         {
             tower.damage += 120;
             circleCollider.radius = 12f;
             bottomPathJason++;
             Money.moneyvalue -= 3000;
         }
-        if (bottomPathJason == 4 && Money.moneyvalue >= 12000)
+        else if (bottomPathJason == 4 && Money.moneyvalue >= 12000)
         {
             tower.damage += 300;
             tower.atkspd += 1;

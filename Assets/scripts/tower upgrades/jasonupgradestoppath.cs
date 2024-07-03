@@ -10,6 +10,7 @@ public class JasonUpgradesTopPath : MonoBehaviour
     public GameObject jasonButtonB;
     JasonUpgradeBottomPath bottompath;
     public GameObject jason;
+    internal bool locked;
     private void Start()
     {
         tower = jason.GetComponent<TowerAttack>();
@@ -17,6 +18,10 @@ public class JasonUpgradesTopPath : MonoBehaviour
     }
     public void UpgradeJasonT()
     {
+        if (bottompath.bottomPathJason >= 3)
+        {
+            locked = true;
+        }
         if (topPathJason == 0 && Money.moneyvalue >= 150) 
         {
             tower.damage += 3;
@@ -25,7 +30,7 @@ public class JasonUpgradesTopPath : MonoBehaviour
             topPathJason++;
             Debug.Log("upgraded: damage " + tower.damage + " upgraded speed: " + tower.atkspd);
         }
-        if (topPathJason == 1 && Money.moneyvalue >= 500)
+        else if (topPathJason == 1 && Money.moneyvalue >= 500)
         {
             tower.atkspd -= 0.1f;
             tower.damage += 6;
@@ -33,7 +38,7 @@ public class JasonUpgradesTopPath : MonoBehaviour
             Money.moneyvalue -= 500;
             Debug.Log("upgrade successfull");
         }
-        if (topPathJason == 2 && bottompath.bottomPathJason <= 2 && Money.moneyvalue >= 1500)
+        else if (topPathJason == 2 && bottompath.bottomPathJason <= 2 && Money.moneyvalue >= 1500)
         {
             tower.damage += 10;
             tower.atkspd -= 0.1f;
@@ -41,14 +46,14 @@ public class JasonUpgradesTopPath : MonoBehaviour
             Money.moneyvalue -= 1500;
             Debug.Log("bottom path locked");
         }
-        if (topPathJason == 3 && bottompath.bottomPathJason <= 2 && Money.moneyvalue >= 4000)
+        else if (topPathJason == 3 && bottompath.bottomPathJason <= 2 && Money.moneyvalue >= 4000)
         {
             tower.damage += 75;
             tower.atkspd -= 0.15f;
             topPathJason++;
             Money.moneyvalue -= 4000;
         }
-        if (topPathJason == 4 && Money.moneyvalue >= 10000) 
+        else if (topPathJason == 4 && Money.moneyvalue >= 10000) 
         {
             tower.damage += 100;
             tower.atkspd -= 0.2f;
