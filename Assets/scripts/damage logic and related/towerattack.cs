@@ -107,16 +107,14 @@ public class TowerAttack : MonoBehaviour
         }
         else
         {
-            GameObject instantiatedProjectile = Instantiate(projectile, spawn.position, spawn.rotation);
-            // Log information about the instantiated projectile
-            Debug.Log("Projectile instantiated: " + instantiatedProjectile.name); // Check instantiation in console
-            Debug.Log("Spawn position: " + spawn.position); // Log spawn position
-            Debug.Log("Spawn rotation: " + spawn.rotation.eulerAngles); // Log spawn rotation
+            Vector3 direction = (currentEnemy.transform.position - spawn.position).normalized;
 
-            // Log position of the instantiated projectile
-            Debug.Log("Projectile position: " + instantiatedProjectile.transform.position);
-            Debug.Log("Projectile rotation: " + instantiatedProjectile.transform.rotation.eulerAngles);
+            // Calculate rotation for the projectile to face the target
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+            Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
+            // Instantiate the projectile with the calculated rotation
+            GameObject instantiatedProjectile = Instantiate(projectile, spawn.position, rotation);
             currentEnemy.TakeDamage();
         }
     }
