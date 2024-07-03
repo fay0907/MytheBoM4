@@ -17,6 +17,7 @@ TagManager:
   - bufftower
   - Towerplacement
   - UI
+  - OpenMenu
   layers:
   - Default
   - TransparentFX
