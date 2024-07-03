@@ -22,6 +22,10 @@ public class TowerAttack : MonoBehaviour
 
     void Update()
     {
+        //Vector3 MousePos = Input.mousePosition;
+       // Vector3 Position = transform.position;
+        //float difference = Vector3.Distance(Position, MousePos);
+       // Debug.Log(Position);
         // Handle the cooldown timer
         if (isAttacking)
         {
