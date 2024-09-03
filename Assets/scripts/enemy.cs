@@ -22,6 +22,7 @@ public class Enemy2 : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(hp);
         if (!IsDead2() && target != null)
         {
             MoveTowardsTarget2();
